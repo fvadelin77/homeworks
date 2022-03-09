@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dogs breeds characteristics</title>
+    <style>
+      body {
+        padding: 5%;
+        background-color: rgb(240, 247, 237);
+      }
+      table {
+        width: 100%;
+        /* border: 1px solid black; */
+      }
+      td {
+        /* border: 1px solid black; */
+      }
+      .croppedImg {
+        object-fit: cover;
+        width: 243px;
+        height: 243px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 50%;
+        border-color: rgb(165, 165, 165);
+      }
+      .breedCategoryLeft {
+        font-size: 20px;
+        padding-left: 20px;
+      }
+      .verticalLine {
+        border-left: 1px solid rgba(0, 0, 0, 0.214);
+        height: 650px;
+        position: absolute;
+        left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="verticalLine"></div>
+    <table>
+      <tr>
+        <td class="breedCategoryLeft">Rotwiller</td>
+        <td align="center" rowspan="5" colspan="2">
+          <!-- rowspan = merge cells, val=nr. celule merged, in jos  -->
+          <img
+            class="croppedImg"
+            src="imagini/beagle.jpeg"
+            alt="Beagle dog photo"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="breedCategoryLeft" style="color: rgb(0, 8, 252)">Beagle</td>
+      </tr>
+      <tr>
+        <td class="breedCategoryLeft">Poodle</td>
+      </tr>
+      <tr>
+        <td class="breedCategoryLeft" style="width: 200px">German shepherd</td>
+      </tr>
+      <tr>
+        <td style="height: 100px"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td colspan="2"><h1>Beagle</h1></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Weight:</b></td>
+        <td>10 -11 kg</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Coat:</b></td>
+        <td>Short haired, hard coat of medium length</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Color:</b></td>
+        <td>Many colors</td>
+      </tr>
+      <tr style="height: 200px">
+        <td></td>
+        <td
+          colspan="2"
+          style="
+            padding-right: 10%;
+            padding-top: 5%;
+            line-height: 1.7;
+            text-align: justify;
+          "
+        >
+          The beagle is a breed of small hound that is similar in appearance to
+          the much larger foxhound. The beagle is a scent hound, developed
+          primarily for hunting hare (beagling). With a great sense of smell and
+          superior tracking instinct, the beagle is employed as detection dog
+          for prohibited agricultural imports and foodstuffs in quarantine
+          around the world. The beagle is intelligent but single- minded. It is
+          a popular pet due to its size, good temper, and lack of inherited
+          health problems.
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
