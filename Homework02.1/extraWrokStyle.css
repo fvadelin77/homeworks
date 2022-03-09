@@ -1,0 +1,44 @@
+body {
+  padding: 5%;
+  background-color: rgb(240, 247, 237);
+}
+table {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+td {
+  /* border: 1px solid black; */
+}
+.croppedImg {
+  object-fit: cover;
+  width: 243px;
+  height: 243px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 50%;
+  border-color: rgb(165, 165, 165);
+}
+.breedCategoryLeft {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.active {
+  color: rgb(0, 8, 252);
+}
+.breed.active:hover {
+  color: rgb(0, 8, 252);
+}
+
+.breed:hover {
+  /* text-decoration: underline solid rgba(0, 0, 255, 0.6) 1px; */
+  color: rgb(208, 177, 0);
+  cursor: pointer;
+}
+
+.verticalLine {
+  border-left: 1px solid rgba(0, 0, 0, 0.214);
+  height: 650px;
+  position: absolute;
+  left: 250px;
+}

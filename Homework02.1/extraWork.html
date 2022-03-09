@@ -1,45 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="extraWrokStyle.css" rel="stylesheet" />
     <title>Dogs breeds characteristics</title>
-    <style>
-      body {
-        padding: 5%;
-        background-color: rgb(240, 247, 237);
-      }
-      table {
-        width: 100%;
-        /* border: 1px solid black; */
-      }
-      td {
-        /* border: 1px solid black; */
-      }
-      .croppedImg {
-        object-fit: cover;
-        width: 243px;
-        height: 243px;
-        border-style: solid;
-        border-width: 3px;
-        border-radius: 50%;
-        border-color: rgb(165, 165, 165);
-      }
-      .breedCategoryLeft {
-        font-size: 20px;
-        padding-left: 20px;
-      }
-      .verticalLine {
-        border-left: 1px solid rgba(0, 0, 0, 0.214);
-        height: 650px;
-        position: absolute;
-        left: 250px;
-      }
-    </style>
   </head>
   <body>
     <div class="verticalLine"></div>
     <table>
       <tr>
-        <td class="breedCategoryLeft">Rotwiller</td>
+        <td class="breedCategoryLeft"><span class="breed">Rotwiller</span></td>
         <td align="center" rowspan="5" colspan="2">
           <!-- rowspan = merge cells, val=nr. celule merged, in jos  -->
           <img
@@ -50,13 +19,17 @@
         </td>
       </tr>
       <tr>
-        <td class="breedCategoryLeft" style="color: rgb(0, 8, 252)">Beagle</td>
+        <td class="breedCategoryLeft">
+          <span class="breed active">Beagle</span>
+        </td>
       </tr>
       <tr>
-        <td class="breedCategoryLeft">Poodle</td>
+        <td class="breedCategoryLeft"><span class="breed">Poodle</span></td>
       </tr>
       <tr>
-        <td class="breedCategoryLeft" style="width: 200px">German shepherd</td>
+        <td class="breedCategoryLeft" style="width: 200px">
+          <span class="breed">German shepherd</span>
+        </td>
       </tr>
       <tr>
         <td style="height: 100px"></td>
