@@ -1,0 +1,39 @@
+body {
+  width: 100%;
+}
+
+article {
+  line-height: 2;
+}
+.postedDate {
+  color: rgb(118, 118, 118);
+  padding-right: 20%;
+  padding-left: 20%;
+}
+.articleBody {
+  /* background-color: ivory; */
+  position: relative;
+  padding-right: 20%;
+  padding-left: 20%;
+  background-position: center;
+}
+hr {
+  padding-right: 20%;
+  padding-left: 20%;
+}
+h3 {
+  padding-right: 20%;
+  padding-left: 20%;
+}
+table {
+  margin-left: 20%;
+  width: 60%;
+  /* border: 1px solid black; */
+  /* background-color: rgb(240, 240, 240); */
+}
+td {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  /* border: 1px solid black; */
+}
