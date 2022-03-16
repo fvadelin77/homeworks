@@ -74,7 +74,7 @@ header {
 }
 
 .image {
-  background-image: url(/img/technology.jpg);
+  background-image: url(https://raw.githubusercontent.com/fvadelin77/homeworks/main/Homework04/template/img/technology.jpg);
   height: 500px;
   margin-bottom: 70px;
 }
