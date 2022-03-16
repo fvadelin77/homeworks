@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.header {
+  display: flex;
+  align-items: baseline;
+  background-color: #f1f1f1;
+  height: 200px;
+}
+.header-main {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  font-size: 70px;
+  color: #303030;
+  margin-left: 10vmin;
+}
+.header-second {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: #999;
+  margin-left: 5vmin;
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 20px;
+  background-color: #f1f1f1;
+  margin: 3% 20%;
+  padding: 10px;
+  border: 2px rgba(0, 0, 0, 0.208) solid;
+  border-radius: 5px;
+}
+
+.form-input p {
+  margin-bottom: 10px;
+}
+
+.form-input textarea {
+  resize: vertical;
+  max-height: 240px;
+  min-height: 45px;
+  margin-bottom: 0;
+}
+.text-input {
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px rgba(0, 0, 0, 0.208) solid;
+  margin-bottom: 20px;
+}
+
+.left-side > p {
+  margin-bottom: 10px;
+}
+
+.form-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 30px;
+}
+
+.adjust-height {
+  height: 100%;
+}
+
+.form-right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.form-right .form-input {
+  height: 100%;
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: #4799d0;
+  color: #fff;
+  border: 1px #1b6fa7 solid;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 11px;
+}
+.social-media {
+  margin: 0 30%;
+  justify-content: center;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  font-size: 25px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.links {
+  display: flex;
+  border-top: 2px #dadada solid;
+  padding-top: 20px;
+}
+
+.links a {
+  justify-content: center;
+  display: flex;
+  flex-grow: 1;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.links a:link {
+  text-decoration: none;
+  color: #4799d0;
+}
+
+.links a:visited {
+  color: #4799d0;
+}
+.links a:hover {
+  text-decoration: underline solid #4799d0;
+}
+
+.links a:first-child {
+  justify-content: left;
+}
+
+.links a:last-child {
+  justify-content: right;
+}
