@@ -76,7 +76,7 @@ header {
 .image {
   background-image: url(https://raw.githubusercontent.com/fvadelin77/homeworks/main/Homework04/template/img/technology.jpg);
   height: 500px;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 }
 
 article {
@@ -139,8 +139,7 @@ article {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 25px;
   text-align: center;
   padding-bottom: 5px;
   border-bottom: 1px dashed rgb(106, 106, 106);
@@ -163,6 +162,13 @@ article {
 }
 
 .trio-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 1.4;
   margin-bottom: 10px;
 }
 
