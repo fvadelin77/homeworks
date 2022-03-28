@@ -84,17 +84,32 @@ function sumaPrime(n) {
 console.log(sumaPrime(5));
 
 // 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
+
 function invers(a) {
-  let output = [];
-  let inv;
-  while (a > 0) {
-    output.push(a % 10);
-    a = Math.trunc(a / 10);
+  let nr = a;
+  let output = 0;
+  while (nr !== 0) {
+    console.log(output, "output");
+    output = output * 10 + (nr % 10);
+    console.log(output, "output");
+    console.log(nr);
+    nr = Math.trunc(nr / 10);
+    console.log(nr);
   }
-  inv = Number(output.join(""));
-  return inv;
+  return output;
 }
 console.log(invers(123));
+
+// function invers(a) {
+//   let output = [];
+//   let inv;
+//   while (a > 0) {
+//     output.push(a % 10);
+//     a = Math.trunc(a / 10);
+//   }
+//   inv = Number(output.join(""));
+//   return inv;
+// }
 
 // 9. O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive (pentru N=5; returneaza 1*3*5*7*9=945)
 function produsImpare(a) {
