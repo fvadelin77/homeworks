@@ -31,7 +31,6 @@ function arrSum(arr) {
 console.log(arrSum([1, 2, 3]));
 
 // 4. compute the maximum of the elements of an array and display it in the console
-
 function maxNr(arr) {
   let currentMax = 0;
   for (i = 0; i < arr.length; i++) {
@@ -44,7 +43,6 @@ function maxNr(arr) {
 console.log(maxNr([0, 1, 20, 3, 4, 5, 6, 7]));
 
 // 5. compute how many times a certain element appears in an array
-
 function elementCounter(arr, elem) {
   let counter = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -57,30 +55,25 @@ function elementCounter(arr, elem) {
 console.log(elementCounter([1, 2, 2, 2, 3], 2));
 
 //Challange - using nested loop for generate the following pattern
-
-// 0101 // in iteratiile in care i%3===0, break + if care checkuieste ce caracter am avut in i-1
+// 0101 // i%3===0 nu merge pt ca face break la prima iteratie (0%3===0)
 // 1010
 // 0101
 // 1010
-
 function pattern() {
   let str = "";
-  for (let i = 0; i < 17; i++) {
-    if (i % 3 === 0) {
+  let p = 0;
+  for (let i = 0; i < 16; i++) {
+    console.log(p);
+    // adauga p si in iteratiile 3,7,11,15, inainte sa intre in if pt \n
+    str += p;
+    // cand i=3,7,11,15 -> \n
+    if (i % 4 === 3) {
       str += "\n";
-      if (i - 1 === 1) {
-        str += 1;
-      } else {
-        str += 0;
-      }
+    } else {
+      // next p = 0 sau 1?
+      p = (p + 1) % 2;
     }
-    // if (i % 2 === 0) {
-    //   str += 0;
-    // } else {
-    //   str += 1;
-    // }
   }
   return str;
 }
-
 console.log(pattern());
