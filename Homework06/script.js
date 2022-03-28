@@ -63,7 +63,7 @@ function pattern() {
   let str = "";
   let p = 0;
   for (let i = 0; i < 16; i++) {
-    console.log(p);
+    // console.log(p);
     // adauga p si in iteratiile 3,7,11,15, inainte sa intre in if pt \n
     str += p;
     // cand i=3,7,11,15 -> \n
