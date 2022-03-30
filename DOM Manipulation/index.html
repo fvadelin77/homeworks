@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="popup hidden">&#10003  </div>
+      <form id="form">
+          <input
+            name="first-name"
+            id="first-name"
+            class="input"
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            name="last-name"
+            id="last-name"
+            class="input"
+            type="text"
+            placeholder="Last Name"
+          />
+        <div class="gender-container">
+          <label> Gender </label>
+          <div class="radio">
+            <label for="male"><input type="radio" class = "gender" name="gender" value="male"/> M</label>
+            <br />
+            <label for="female"><input type="radio" class = "gender" name="gender" value="female"/> F</label>
+          </div>
+        </div>
+        <textarea 
+        id="textarea"
+          rows="10"
+          class="input text-input"
+          name="Message"
+          placeholder="Message"
+        ></textarea>
+        <input type="submit" value="Submit" class="submit-btn"/>
+    </form>
+      <div class="img-side">
+        <img
+        src="https://wwz.ifremer.fr/var/storage/images/_aliases/opengraphimage/medias-ifremer/medias-bluerevolution/contact-us/1811720-1-eng-GB/Contact-us.png"/
+        width="400px" height="350px" >
+      </div>
+      
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</div>
+</html>

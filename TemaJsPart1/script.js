@@ -89,12 +89,8 @@ function invers(a) {
   let nr = a;
   let output = 0;
   while (nr !== 0) {
-    console.log(output, "output");
     output = output * 10 + (nr % 10);
-    console.log(output, "output");
-    console.log(nr);
     nr = Math.trunc(nr / 10);
-    console.log(nr);
   }
   return output;
 }

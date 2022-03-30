@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+body {
+  display: flex;
+  min-height: 70vh;
+  align-items: flex-end;
+}
+form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 1.5rem;
+  padding: 1.5rem 3rem;
+  border: 1px solid black;
+  gap: 30px;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 0.2rem;
+  overflow: hidden;
+  border: 2px rgba(0, 0, 0, 0.208) solid;
+  border-radius: 5px;
+}
+
+.text-input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px rgba(0, 0, 0, 0.208) solid;
+}
+
+.gender-container {
+  display: flex;
+  gap: 20px;
+}
+
+.submit-btn {
+  width: fit-content;
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: #4799d0;
+  color: #fff;
+  border: 1px #1b6fa7 solid;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.img-side {
+  z-index: -1;
+}
+
+/* Clase pentru validare */
+
+.invalid {
+  background-color: rgba(255, 0, 0, 0.173);
+}
+
+.pass {
+  border: 1px solid limegreen;
+  border-radius: 5px;
+  background-color: rgba(50, 205, 50, 0.139);
+}
+
+.error {
+  border: 1px solid rgba(255, 0, 0, 0.79);
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.173);
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+  height: 25px;
+  width: 45%;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: green;
+  background-color: rgba(50, 205, 50, 0.139);
+  border: 1px solid limegreen;
+  border-radius: 5px;
+}
+
+.radio-error {
+  outline: 1px solid rgba(255, 0, 0, 0.571);
+}
+
+.hidden {
+  display: none;
+}
