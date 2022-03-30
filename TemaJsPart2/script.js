@@ -1,6 +1,5 @@
 "use strict";
 // 1. O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
-// All good
 function getDigits(str) {
   let strNo = "";
   for (let i = 0; i < str.length; i++) {
@@ -12,7 +11,6 @@ function getDigits(str) {
 console.log(getDigits("xx56xx456xxxxx456xx456"));
 
 // 2. O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv // de modificat
-// All good
 function getLetters(str) {
   let strTxt = "";
   for (let i = 0; i < str.length; i++) {
@@ -25,7 +23,6 @@ function getLetters(str) {
 console.log(getLetters("xx56xx456xxxxx456xx456"));
 
 // 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
-// All good
 function getFirst5Letters(str) {
   let output = "";
   let onlyLettersStr = getLetters(str);
@@ -37,7 +34,7 @@ function getFirst5Letters(str) {
 
 console.log(getFirst5Letters("as123dfgh123jkl"), getFirst5Letters("abccc1223"));
 
-// 4. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate - all good!
+// 4. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate
 function concatenate(arr) {
   let output = "";
   for (let i = 0; i < arr.length; i++) {
@@ -47,7 +44,7 @@ function concatenate(arr) {
 }
 console.log(concatenate(["abc", "123", "xyz"]));
 
-// 5. O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile - all good
+// 5. O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile
 function getAllDigits(arr) {
   let str = "";
   let strNo = "";
@@ -62,7 +59,7 @@ function getAllDigits(arr) {
 }
 console.log(getAllDigits(["ab3", "a23", "x2z"]));
 
-// 6. O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate - all good
+// 6. O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate
 function invertAllStrings(arr) {
   let arrInv = [];
   let m = "";
@@ -77,7 +74,7 @@ function invertAllStrings(arr) {
 }
 console.log(invertAllStrings(["abc", "def", "ghi"]));
 
-// 7. Calculeaza factorialul unui numar ("factorial"). - all good
+// 7. Calculeaza factorialul unui numar ("factorial").
 function factorial(n) {
   let output = 1;
   for (let i = n; i > 1; i--) {
@@ -87,7 +84,7 @@ function factorial(n) {
 }
 console.log(factorial(4));
 
-/////////// 8. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc") - all good
+// 8. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc")
 function cmmdc(a, b) {
   let r = a % b;
   while (r !== 0) {
@@ -98,15 +95,15 @@ function cmmdc(a, b) {
   return b;
 }
 console.log(cmmdc(18, 24));
-/////////// 9. Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
 
+// 9. Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
 function cmmmc(a, b) {
   let i = (a * b) / cmmdc(a, b);
   return i;
 }
 console.log(cmmmc(18, 24));
 
-// 10. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori") - all good
+// 10. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
 function divizori(a) {
   let output = [];
   for (let i = 2; i < a; i++) {
@@ -118,7 +115,7 @@ function divizori(a) {
 }
 console.log(divizori(64));
 
-/////////// 11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom") - all good
+// 11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
 function palindrom(a) {
   let nr = a;
   let nrInv = 0;
