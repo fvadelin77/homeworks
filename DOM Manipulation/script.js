@@ -34,8 +34,6 @@ for (let i = 0; i < input.length; i++) {
   });
 }
 
-// On click listener for radios, remove error if checked
-
 // On submit individual field checker for ch < 3
 const isBlank = function () {
   for (let i = 0; i < input.length; i++) {
