@@ -9,9 +9,32 @@ const genderF = document.getElementById("genderF");
 const messageBox = document.getElementById("textarea");
 const popUp = document.querySelector(".popup");
 const input = document.querySelectorAll(".input");
-const gender = document.querySelectorAll(".gender");
+const gender = document.querySelectorAll(".gender-radio");
+const radios = document.querySelector(".radios");
 // variabila globala pentru ca o folosesc in 2 functii, in una scriu arr, in alta citesc arr - de actualizat
 let containsText = [];
+
+// On click listener for radios div, if 1 radio is checked, remove error from all
+radios.addEventListener("click", function () {
+  if ("input[type='radio']:checked") {
+    for (let i = 0; i < gender.length; i++) {
+      gender[i].classList.remove("radio-error");
+    }
+  }
+});
+
+// On focus change check for ch < 3 - global
+for (let i = 0; i < input.length; i++) {
+  input[i].addEventListener("change", function (e) {
+    if (input[i].value.trim().length < 3) {
+      input[i].classList.add("invalid");
+    } else {
+      input[i].classList.remove("invalid");
+    }
+  });
+}
+
+// On click listener for radios, remove error if checked
 
 // On submit individual field checker for ch < 3
 const isBlank = function () {
@@ -66,7 +89,7 @@ const logger = function () {
   console.log(`Message: ${messageBox.value}`);
 };
 
-///// Submit validation
+// Submit validation
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
   // Apeleaz functii care verifica inputuri
@@ -75,21 +98,8 @@ formEl.addEventListener("submit", function (e) {
   // Conditii pentru Submit succesful
   if (inputValidator() && isChecked()) {
     popUp.classList.remove("hidden");
-    popUp.innerHTML = `Thank you for contacting us, ${firstNameinputEl.value}`;
+    popUp.innerHTML = `Thank you for contacting us, ${firstNameinputEl.value} !`;
 
     logger();
   }
 });
-
-// // On focus change check for ch < 3 - global
-// for (let i = 0; i < input.length; i++) {
-//   input[i].addEventListener("change", function (e) {
-//     if (input[i].value.trim().length < 3) {
-//       input[i].classList.add("invalid");
-//       inputValidator[i] = -1;
-//     } else {
-//       inputValidator[i] = -1;
-//       input[i].classList.remove("invalid");
-//     }
-//   });
-// }
