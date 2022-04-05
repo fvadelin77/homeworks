@@ -25,8 +25,8 @@ console.log(getLetters("xx56xx456xxxxx456xx456"));
 // 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
 function getFirst5Letters(str) {
   let output = "";
-  let onlyLettersStr = getLetters(str);
   for (let i = 0; output.length < 5; i++) {
+    let onlyLettersStr = getLetters(str);
     output += onlyLettersStr[i];
   }
   return output;
