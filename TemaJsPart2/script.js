@@ -211,7 +211,7 @@ function binarySearch(arr, val) {
 
 console.log(binarySearch([1, 2, 3, 4, 5], 2));
 
-// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch")
+// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch") -  de modificat cu functie recursiva
 function countBinarySearch(arr, val) {
   let min = sortBubble(arr)[0];
   let max = sortBubble(arr)[arr.length - 1];
@@ -231,26 +231,3 @@ function countBinarySearch(arr, val) {
 }
 
 console.log(countBinarySearch([1, 2, 3, 4, 5], 5));
-
-// 15.
-// function countBinarySearch1(arr, val) {
-//   let min = sortBubble(arr)[0];
-//   let max = sortBubble(arr)[arr.length - 1];
-//   let middle = Math.floor((min + max) / 2);
-//   let counter = 1;
-//   if (val >= min && val <= max) {
-//     while (middle !== val) {
-//       if (val < middle) {
-//         max = middle - 1;
-//         middle = Math.floor((min + max) / 2);
-//       } else if (val > middle) {
-//         min = middle + 1;
-//         middle = Math.floor((min + max) / 2);
-//       }
-//     }
-//     return true;
-//   }
-//   return false;
-// }
-
-// console.log(countBinarySearch1([1, 2, 3, 4, 5]));

@@ -96,17 +96,6 @@ function invers(a) {
 }
 console.log(invers(123));
 
-// function invers(a) {
-//   let output = [];
-//   let inv;
-//   while (a > 0) {
-//     output.push(a % 10);
-//     a = Math.trunc(a / 10);
-//   }
-//   inv = Number(output.join(""));
-//   return inv;
-// }
-
 // 9. O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive (pentru N=5; returneaza 1*3*5*7*9=945)
 function produsImpare(a) {
   let produce = 1;
@@ -157,10 +146,9 @@ console.log(sumMinMax([-1, -2, -3]));
 
 // 13. O functie "hasDuplicates" care primeste un array si returneaza daca exista duplicate intr-un array primit ca parametru (true/false)
 function hasDuplicates(arr) {
-  let current;
   for (let i = 0; i < arr.length; i++) {
-    current = arr[i];
     for (let j = i + 1; j < arr.length; j++) {
+      let current = arr[i];
       if (current === arr[j]) {
         return true;
       }
@@ -191,3 +179,14 @@ function palindrom(str) {
   return str === strInv ? true : false;
 }
 console.log(palindrom("1234321"));
+
+// function invers(a) {
+//   let output = [];
+//   let inv;
+//   while (a > 0) {
+//     output.push(a % 10);
+//     a = Math.trunc(a / 10);
+//   }
+//   inv = Number(output.join(""));
+//   return inv;
+// }
