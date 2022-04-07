@@ -42,7 +42,14 @@ body {
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: azure;
+  background-color: rgba(240, 255, 255, 0.838);
+}
+
+.form-btn > input:active,
+.table-btn:active,
+.cancel-edit-btn input:active,
+.save-btn input:active {
+  color: azure;
 }
 
 .form-btn > input:hover,
@@ -50,11 +57,12 @@ body {
 .cancel-edit-btn input:hover,
 .save-btn input:hover {
   cursor: pointer;
+  background-color: rgba(240, 114, 114, 0.865);
 }
 
 .inputs input,
 .table-btn {
-  background-color: azure;
+  background-color: rgba(240, 255, 255, 0.838);
   border: none;
   border-radius: 20px;
   padding: 7px;

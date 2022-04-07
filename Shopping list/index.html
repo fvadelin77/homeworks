@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping list</title>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="text" name="item" placeholder="Enter item..." />
+        <input
+          onclick="addToList()"
+          class="btn"
+          type="button"
+          name="add-item-btn"
+          value=" + "
+        />
+      </form>
+      <div class="sort hidden">
+        <input
+          onclick="sort(1)"
+          class="btn"
+          type="button"
+          name="sort-asc"
+          value="Sort Asc."
+        />
+        <input
+          onclick="sort(-1)"
+          class="btn"
+          type="button"
+          name="sort-asc"
+          value="Sort Desc."
+        />
+      </div>
+      <div class="table">
+        <table class="hidden">
+          <thead>
+            <th>Item description</th>
+            <th>Action</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -50,18 +50,20 @@ function enter() {
 }
 
 function edit(i) {
-  state.editState = true;
-  let elem = state.list[i];
-  document.querySelector("input[name='nume']").value = elem.nume;
-  document.querySelector("input[name='telefon']").value = elem.tel;
-  document.querySelector("input[name='adauga']").value = "Salveaza";
-  document.querySelector(".btns").innerHTML = `
+  if (state.editState === false) {
+    state.editState = true;
+    let elem = state.list[i];
+    document.querySelector("input[name='nume']").value = elem.nume;
+    document.querySelector("input[name='telefon']").value = elem.tel;
+    document.querySelector("input[name='adauga']").value = "Salveaza";
+    document.querySelector(".btns").innerHTML = `
   <div class="save-btn" onclick="save(${i})">
                 <input type="button" name="salveaza" value="Salveaza" />
               </div>
   <div class="cancel-edit-btn">
   <input onclick="cancelEdit();" type="button" name="cancel" value="${"&#215"}" />
 </div>`;
+  }
 }
 
 function cancelEdit() {
@@ -79,6 +81,7 @@ function del(i) {
     confirm(`Esti sigur ca vrei sa stergi contactul: ${state.list[i].nume}?`)
   ) {
     state.list.splice(i, 1);
+    cancelEdit();
     draw();
     if (state.list.length === 0) {
       document.querySelector("table").classList.add("hidden");
@@ -95,11 +98,6 @@ function save(i) {
     elem.nume = nume;
     elem.tel = tel;
   }
-  document.querySelector("form").reset();
-  document.querySelector(".btns").innerHTML = `
-  <div class="form-btn" onclick="adauga()">
-  <input type="button" name="adauga" value="Adauga contact" />
-</div>`;
-  state.editState = false;
+  cancelEdit();
   draw();
 }

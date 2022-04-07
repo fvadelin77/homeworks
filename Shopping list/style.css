@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #4a62b1 0%, #2ebf5c 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 30vw;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.table {
+  align-self: stretch;
+}
+
+.container form {
+  display: flex;
+  align-self: stretch;
+  gap: 20px;
+}
+
+.sort {
+  align-self: flex-start;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
+form input,
+.sort input,
+td input {
+  font-size: 12px;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(240, 255, 255, 0.838);
+}
+
+.btn:active {
+  color: rgba(240, 255, 255, 0.838);
+}
+
+.btn:hover {
+  background-color: rgba(240, 114, 114, 0.865);
+}
+
+form input {
+  font-size: 16px;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+}
+table th {
+  font-weight: 400;
+  /* text-decoration: underline; */
+}
+
+.strikeThrough {
+  text-decoration: line-through rgba(240, 114, 114) 2px;
+}
+
+.hidden {
+  display: none;
+}
