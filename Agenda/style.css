@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #4a62b1 0%, #2ebf5c 100%);
+  display: flex;
+  align-items: flex-start;
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(208, 208, 208, 0.256);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.form-btn > input,
+.save-btn input {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: azure;
+}
+
+.form-btn > input:hover,
+.table-btn:hover,
+.cancel-edit-btn input:hover,
+.save-btn input:hover {
+  cursor: pointer;
+}
+
+.inputs input,
+.table-btn {
+  background-color: azure;
+  border: none;
+  border-radius: 20px;
+  padding: 7px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgba(208, 208, 208, 0.256);
+  padding: 10px;
+  border-radius: 20px;
+}
+table thead th,
+table tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.cancel-edit-btn input {
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  background-color: azure;
+  border: none;
+  border-radius: 20px;
+}
+
+/* .banner {
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  position: absolute;
+  background-color: rgba(208, 208, 208, 0.256);
+  padding: 10px;
+  border-radius: 20px;
+  animation: hideAnimation 0s ease-in 2s;
+  animation-fill-mode: forwards;
+} */

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet"></link>
+    <script src="script.js"></script>
+  </head>
+  <body>
+      <!-- <div class="banner hidden"></div> -->
+    <div class="container">
+        <form>
+          <div class="form">
+              <div class="inputs">
+            <label for="nume"
+              >Nume: <input type="text" placeholder="" name="nume"
+            /></label>
+            <label for="telefon"
+              >Telefon:
+              <input type="text" placeholder="" name="telefon" onfocus="enter()"/>
+            </label>
+              </div>
+              <div class = "btns">
+              <div class="form-btn" onclick="adauga()">
+                <input type="button" name="adauga" value="Adauga contact" />
+              </div>
+            </div>
+          </div>
+        </form>
+        <table class="hidden">
+            <thead>
+                <tr>
+                    <th style="font-weight: 400;">
+                        Nume
+                    </th>
+                    <th style="font-weight: 400;">
+                        Telefon
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>
