@@ -31,7 +31,6 @@ function getFirst5Letters(str) {
   }
   return output;
 }
-
 console.log(getFirst5Letters("as123dfgh123jkl"), getFirst5Letters("abccc1223"));
 
 // 4. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate
@@ -127,7 +126,7 @@ function palindrom(a) {
 }
 console.log(palindrom(1234321));
 
-// 12. O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort") - de verificat pt numere negative
+// 12. O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
 function sort(arr) {
   // sortare array bubble
   for (let i = 0; i < arr.length; i++) {
@@ -180,22 +179,10 @@ function sortAscDesc(arr) {
 console.log(sortAscDesc([5, 4, 3, 2, 1]));
 
 // 14. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
-function sortBubble(arr) {
-  // sortare array bubble
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-  return arr;
-}
+
 function binarySearch(arr, val) {
-  let min = sortBubble(arr)[0];
-  let max = sortBubble(arr)[arr.length - 1];
+  let min = arr[0];
+  let max = arr[arr.length - 1];
   while (min <= max) {
     let middle = Math.floor((max + min) / 2);
     if (middle === val) {
@@ -208,13 +195,12 @@ function binarySearch(arr, val) {
   }
   return false;
 }
-
 console.log(binarySearch([1, 2, 3, 4, 5], 2));
 
 // 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch") -  de modificat cu functie recursiva
 function countBinarySearch(arr, val) {
-  let min = sortBubble(arr)[0];
-  let max = sortBubble(arr)[arr.length - 1];
+  let min = arr[0];
+  let max = arr[arr.length - 1];
   let counter = 0;
   while (min <= max) {
     let middle = Math.floor((max + min) / 2);
@@ -229,5 +215,18 @@ function countBinarySearch(arr, val) {
   }
   return counter;
 }
-
 console.log(countBinarySearch([1, 2, 3, 4, 5], 5));
+
+// function sortBubble(arr) {
+//   // sortare array bubble
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length - i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return arr;
+// }

@@ -29,12 +29,16 @@ function draw() {
   for (let i = 0; i < state.list.length; i++) {
     let stateElement = state.list[i];
     str += `
-        <tr>
-            <td>${stateElement.nume}</td>
-            <td>${stateElement.tel}</td>
-            <td><button class="table-btn" onclick="edit(${i})">Modifica</button></td>
-            <td><button class="table-btn" onclick="del(${i})">Sterge</button></td>
-        </tr>
+      <tr>
+        <td>${stateElement.nume}</td>
+        <td>${stateElement.tel}</td>
+        <td>
+          <button class="table-btn" onclick="edit(${i})">Modifica</button>
+        </td>
+        <td>
+          <button class="table-btn" onclick="del(${i})">Sterge</button>
+        </td>
+      </tr>
   `;
   }
   tableEntry.innerHTML = str;
@@ -57,12 +61,12 @@ function edit(i) {
     document.querySelector("input[name='telefon']").value = elem.tel;
     document.querySelector("input[name='adauga']").value = "Salveaza";
     document.querySelector(".btns").innerHTML = `
-  <div class="save-btn" onclick="save(${i})">
-                <input type="button" name="salveaza" value="Salveaza" />
-              </div>
-  <div class="cancel-edit-btn">
-  <input onclick="cancelEdit();" type="button" name="cancel" value="${"&#215"}" />
-</div>`;
+      <div class="save-btn" onclick="save(${i})">
+        <input type="button" name="salveaza" value="Salveaza" />
+      </div>
+      <div class="cancel-edit-btn">
+        <input onclick="cancelEdit();" type="button" name="cancel" value="${"&#215"}" />
+      </div>`;
   }
 }
 
@@ -71,14 +75,14 @@ function cancelEdit() {
   document.querySelector("form").reset();
   document.querySelector("cancel-edit-btn");
   document.querySelector(".btns").innerHTML = `
-  <div class="form-btn" onclick="adauga()">
-  <input type="button" name="adauga" value="Adauga contact" />
-</div>`;
+    <div class="form-btn" onclick="adauga()">
+      <input type="button" name="adauga" value="Adauga contact" />
+    </div>`;
 }
 
 function del(i) {
   if (
-    confirm(`Esti sigur ca vrei sa stergi contactul: ${state.list[i].nume}?`)
+    confirm(`Esti sigur ca vrei sa stergi contactul: "${state.list[i].nume}" ?`)
   ) {
     state.list.splice(i, 1);
     cancelEdit();

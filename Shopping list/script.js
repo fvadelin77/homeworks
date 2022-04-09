@@ -1,3 +1,4 @@
+"use strict";
 let state = {
   list: [],
 };
@@ -22,10 +23,15 @@ function draw() {
   for (let i = 0; i < state.list.length; i++) {
     let elem = state.list[i];
     // Maybe try toggle strikeThrough ?
-    str += `<tr>
-        <td class="${elem.bought ? "strikeThrough" : ""}">${elem.item}</td>
-        <td><input onclick="bought(${i})" class="btn" type="button" name="bought" value="Bought" /></td>
-    </tr>`;
+    str += `
+      <tr>
+        <td class="${elem.bought ? "strikeThrough" : ""}">
+          ${elem.item}
+        </td>
+        <td>
+          <input onclick="bought(${i})" class="btn" type="button" name="bought" value="Bought" />
+        </td>
+      </tr>`;
   }
   document.querySelector("tbody").innerHTML = str;
   console.log(state.list);
