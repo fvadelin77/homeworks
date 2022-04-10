@@ -179,7 +179,6 @@ function sortAscDesc(arr) {
 console.log(sortAscDesc([5, 4, 3, 2, 1]));
 
 // 14. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
-
 function binarySearch(arr, val) {
   let min = arr[0];
   let max = arr[arr.length - 1];
@@ -197,36 +196,29 @@ function binarySearch(arr, val) {
 }
 console.log(binarySearch([1, 2, 3, 4, 5], 2));
 
-// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch") -  de modificat cu functie recursiva
+// 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch") - de scos while si pus recrusion
 function countBinarySearch(arr, val) {
-  let min = arr[0];
-  let max = arr[arr.length - 1];
   let counter = 0;
-  while (min <= max) {
-    let middle = Math.floor((max + min) / 2);
+  function binarySearch(arr, val) {
     counter++;
-    if (middle === val) {
-      return counter;
-    } else if (val < middle) {
-      max = middle - 1;
-    } else if (val > middle) {
-      min = middle + 1;
-    }
+    let min = arr[0];
+    let max = arr[arr.length - 1];
+    let newArr = [];
+    if (min <= max) {
+      let middle = Math.floor((max + min) / 2);
+      if (middle === val) {
+        return;
+      } else if (val < middle) {
+        max = middle - 1;
+        newArr = arr.slice(0, max);
+      } else if (val > middle) {
+        min = middle + 1;
+        newArr = arr.slice(middle, arr.length);
+      }
+      binarySearch(newArr, val);
+    } else return;
   }
+  binarySearch(arr, val);
   return counter;
 }
-console.log(countBinarySearch([1, 2, 3, 4, 5], 5));
-
-// function sortBubble(arr) {
-//   // sortare array bubble
-//   for (let i = 0; i < arr.length; i++) {
-//     for (let j = 0; j < arr.length - i - 1; j++) {
-//       if (arr[j] > arr[j + 1]) {
-//         let temp = arr[j];
-//         arr[j] = arr[j + 1];
-//         arr[j + 1] = temp;
-//       }
-//     }
-//   }
-//   return arr;
-// }
+console.log(countBinarySearch([1, 2, 3, 4, 5], 4));

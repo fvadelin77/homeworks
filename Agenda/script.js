@@ -1,3 +1,4 @@
+"use strict";
 let state = {
   list: [],
   editState: false,
