@@ -8,8 +8,8 @@ function adauga() {
   if (state.editState === true) {
     cancelEdit();
   } else {
-    nume = document.querySelector("input[name='nume']").value;
-    tel = document.querySelector("input[name='telefon']").value;
+    let nume = document.querySelector("input[name=nume]").value;
+    let tel = document.querySelector("input[name=telefon]").value;
     if (nume && tel) {
       let entry = {
         nume: nume,
@@ -95,8 +95,8 @@ function del(i) {
 }
 
 function save(i) {
-  nume = document.querySelector("input[name='nume']").value;
-  tel = document.querySelector("input[name='telefon']").value;
+  let nume = document.querySelector("input[name='nume']").value;
+  let tel = document.querySelector("input[name='telefon']").value;
   if (nume && tel) {
     let elem = state.list[i];
     console.log(elem);
@@ -106,3 +106,5 @@ function save(i) {
   cancelEdit();
   draw();
 }
+
+// event.stopPropagation(), pe onclick sau in interiorul functiei, previne sa se propage eventul in sus in dom
