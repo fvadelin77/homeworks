@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="loading.css" rel="stylesheet" />
+    <link href="modifica.css" rel="stylesheet" />
+    <link href="sterge.css" rel="stylesheet" />
+    <script src="sterge.js"></script>
+  </head>
+  <body onload="getData();">
+    <div class="lds-ellipsis hidden">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container">
+      <div class="title-contact">
+        <h3>Cald si bun (Admin)</h3>
+      </div>
+      <div class="content">
+        <h4>Esti pe cale sa stergi preparatul:</h4>
+        <h4>Confirmi stergerea?</h4>
+      </div>
+      <div class="btns">
+        <input onclick="deleteConfirm();" type="button" value="Sterge" />
+        <input onclick="adminHome();" type="button" value="Nu" />
+      </div>
+    </div>
+  </body>
+</html>

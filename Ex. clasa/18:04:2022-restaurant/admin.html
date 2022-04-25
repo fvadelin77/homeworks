@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meniu ADMIN</title>
+    <script src="admin.js"></script>
+    <link href="loading.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body onload="getData();">
+    <div class="lds-ellipsis hidden">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container">
+      <div class="title-contact">
+        <h3>Cald si bun (Admin)</h3>
+        <input onclick="addDish();" type="button" value="Adauga preparat" />
+      </div>
+      <div class="search">
+        <input type="text" />
+        <input onclick="search()" type="button" value="Cauta in ingrediente" />
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>

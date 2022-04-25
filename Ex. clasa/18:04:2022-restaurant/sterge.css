@@ -1,0 +1,15 @@
+.content {
+  margin-bottom: 20px;
+}
+
+.btns > [value="Sterge"] {
+  color: whitesmoke;
+  background-color: rgb(227, 67, 9);
+  padding: 3px;
+}
+
+.btns > [value="Nu"] {
+  color: whitesmoke;
+  background-color: rgb(56, 170, 215);
+  padding: 3px;
+}
