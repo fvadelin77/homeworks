@@ -10,6 +10,9 @@ body {
   background-color: honeydew;
 }
 
+input[type="button"] {
+  padding: 1px;
+}
 .container {
   border: 2px solid rgb(36, 116, 1);
   border-radius: 10px;
@@ -44,11 +47,11 @@ body {
   gap: 20px;
 }
 
-.details-btn,
+/* .details-btn,
 .description {
   height: fit-content;
   align-self: center;
-}
+} */
 
 .lds-ellipsis {
   position: absolute;
@@ -82,4 +85,20 @@ body {
 
 .hidden {
   display: none;
+}
+.meal {
+  display: grid;
+  grid-template-columns: 0.6fr 3fr 0.6fr;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

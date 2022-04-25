@@ -32,8 +32,10 @@ function draw() {
             <h3 class="title">${description.nume}</h3>
             <p class="description">${description.ingrediente}</p>
           </div>
-          <a href="modifica.html?id=${id}"><input class="btn" type="button" value="Modifica"> </a>
-          <a href="sterge.html?id=${id}"><input class="btn" type="button" value="Sterge"> </a>
+          <div class="btns">
+            <a href="modifica.html?id=${id}"><input class="btn" type="button" value="Modifica"> </a>
+            <a href="sterge.html?id=${id}"><input class="btn" type="button" value="Sterge"> </a>
+          </div>
         </div>
     `;
     }
