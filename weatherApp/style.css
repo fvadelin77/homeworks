@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    #1c92d2 10%,
+    #ffc400a3 90%,
+    #ffc400 99.9%
+  );
+  padding: 10px;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  /* padding: 20px; */
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  /* border: 1px solid black; */
+}
+
+input[name="location-input"] {
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(240, 255, 255, 0.838);
+}
+
+.input-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 95vw;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.input-btns > input {
+  font-size: 14px;
+  padding: 7px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(240, 255, 255, 0.5);
+}
+
+.celsius {
+  font-size: 50px;
+}
+
+.current-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.secondary-info {
+  font-size: 12px;
+}
+.left-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.first-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon > img {
+  width: 40px;
+  height: auto;
+  object-fit: none;
+}
+
+.right-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.time {
+  font-size: 12px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.min-max {
+  font-size: 12px;
+}
