@@ -1,23 +1,31 @@
 <html>
   <head>
     <title>85'n'Sunny</title>
-
     <script src="script.js"></script>
     <script
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDf_7oXMYQ2_jsfi7zBDYISzrUOqpCN5iU&callback=initMap"
     ></script>
-
+    <link href="small-loader.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div class="input-bar">
-        <input
-          type="text"
-          name="location-input"
-          placeholder="Enter location..."
-        />
+        <div class="input-location">
+          <input
+            type="text"
+            name="location-input"
+            placeholder="Enter location..."
+          />
+          <div class="lds-ring hidden">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <input class="warning hidden" type="button" value="Current weather" />
+        </div>
         <div class="input-btns">
           <input
             onclick="getCurrentData();"
@@ -31,20 +39,21 @@
           />
         </div>
       </div>
-      <div class="current-info">
+      <div class="current-info hidden">
         <div class="right-info">
-          <div class="location"></div>
-          <div class="time"></div>
-          <div class="min-max">
-            <div class="min-temp"></div>
-            <div class="max-temp"></div>
+          <div class="right-info-descr">
+            <div class="location-icon">
+              <img src="https://openweathermap.org/img/w/04n.png" />
+            </div>
+            <div class="time"></div>
+            <div class="min-max">
+              <div class="min-temp"></div>
+              <div class="max-temp"></div>
+            </div>
           </div>
         </div>
         <div class="left-info">
-          <div class="first-info">
-            <div class="icon"></div>
-            <div class="description"></div>
-          </div>
+          <div class="first-info"></div>
           <div class="celsius"></div>
           <div class="secondary-info">
             <div class="precip"></div>
@@ -53,7 +62,7 @@
           </div>
         </div>
       </div>
-      <div id="map" style="width: 100%; height: 250px"></div>
+      <div id="map" style="width: 100%; height: 300px"></div>
     </div>
   </body>
 </html>

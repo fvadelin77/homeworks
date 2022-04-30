@@ -9,16 +9,47 @@ let state = {
 
 async function getCurrentData() {
   let location = document.querySelector("input[name=location-input]");
+  let loader = document.querySelector(".lds-ring");
+  let warning = document.querySelector(".warning");
+  let letters = /^[A-Za-z]+$/;
+  loader.classList.toggle("hidden");
   if (!location.value) {
+    warning.classList.remove("hidden");
+    loader.classList.toggle("hidden");
+    warning.value = "Location cannot be empty !";
+    setTimeout(function () {
+      warning.classList.add("hidden");
+    }, 3000);
+    return;
+  }
+  if (!location.value.match(letters)) {
+    warning.classList.remove("hidden");
+    loader.classList.toggle("hidden");
+    warning.value = "Only alphabetical characters allowed !";
+    location.value = "";
+    setTimeout(function () {
+      warning.classList.add("hidden");
+    }, 3000);
     return;
   } else {
     let responseCurrent = await fetch(
       state.urlCurrent + `${location.value.toLowerCase()}`
     );
+    if (responseCurrent.status === 404) {
+      warning.classList.remove("hidden");
+      loader.classList.toggle("hidden");
+      warning.value = `Location "${location.value}", not found !`;
+      location.value = "";
+      setTimeout(function () {
+        warning.classList.add("hidden");
+      }, 3000);
+      return;
+    }
     state.current = await responseCurrent.json();
     state.icon = await fetch(
       state.urlIcon + `${state.current.weather[0].icon}` + ".png"
     );
+    loader.classList.toggle("hidden");
     console.log(state.current, state.icon);
     location.value = "";
     populateCurrent();
@@ -43,20 +74,20 @@ function populateCurrent() {
   getSecondaryData();
   let cr = state.current;
   let crWeather = cr.weather[0];
-  let location = document.querySelector(".location");
-  let icon = document.querySelector(".icon");
-  let description = document.querySelector(".description");
+  let location = document.querySelector(".location-icon");
   let celsius = document.querySelector(".celsius");
   let min = document.querySelector(".min-temp");
-  let max = document.querySelector(".max-temp");
   let time = document.querySelector(".time");
-  location.innerHTML = `${cr.name}, ${cr.sys.country}`;
-  icon.innerHTML = `<img src="${state.urlIcon + crWeather.icon}.png"/>`;
-  description.innerHTML = `${crWeather.description}`;
+  location.innerHTML = `
+    <div class = "location">${cr.name}, ${cr.sys.country}</div>
+    <img src = "${state.urlIcon + crWeather.icon}.png"/>
+  `;
   celsius.innerHTML = `${Math.trunc(cr.main.temp)}°C`;
-  min.innerHTML = `Min. temperature: ${Math.trunc(cr.main.temp_min)}°C`;
-  max.innerHTML = `Max. temperature: ${Math.trunc(cr.main.temp_max)}°C`;
+  min.innerHTML = `Min / Max temp.: ${Math.trunc(
+    cr.main.temp_min
+  )}°C / ${Math.trunc(cr.main.temp_max)}°C`;
   time.innerHTML = state.timeDayOfWeek;
+  document.querySelector(".current-info").classList.remove("hidden");
 }
 
 function getDateTime() {
@@ -144,7 +175,7 @@ function initMap() {
         state.current.coord.lat,
         state.current.coord.lon
       ),
-      zoom: 10,
+      zoom: 12,
       controlSize: 25,
       setCenter: { lat: state.current.coord.lat, lon: state.current.coord.lon },
     };
