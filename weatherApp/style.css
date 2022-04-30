@@ -63,7 +63,10 @@ input[name="location-input"] {
   border-radius: 20px;
   background-color: rgba(240, 255, 255, 0.838);
 }
-
+.input-btns > input:link {
+  background-color: rgba(240, 255, 255, 0.838);
+  cursor: pointer;
+}
 .input-btns > input:visited {
   background-color: rgba(240, 255, 255, 0.838);
   cursor: pointer;
@@ -74,7 +77,7 @@ input[name="location-input"] {
 }
 
 .input-btns > input:active {
-  background-color: #1399e1;
+  background-color: rgba(240, 255, 255, 0.838);
   cursor: pointer;
 }
 
