@@ -141,14 +141,15 @@ function populateDailyForecast() {
   let elem = document.querySelector(".forecastDaily");
   let list = state.forecast.list;
   let str = "";
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < list.length; i++) {
     let date = new Date(list[i].dt * 1000);
     let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
     let icon = list[i].weather[0].icon;
-    console.log(icon);
-    console.log(`${dayOfWeek}, ${date.getDate()}/${date.getMonth() + 1}`);
+    console.log(state.forecast);
+
     str += `
         <div class="forecastElemDaily">
+        <div class="date-hour">
             <div class="date">${dayOfWeek}, ${date.getDate()}/${
       date.getMonth() + 1
     }
@@ -156,7 +157,13 @@ function populateDailyForecast() {
             <div class="hour">${date.getHours()}:${
       date.getMinutes() + "0"
     }</div>
+    </div>
         <div class="icon-temp">
+            ${
+              list[i].rain === undefined
+                ? ""
+                : `<div class="rainProb">${list[i].pop * 100}%</div>`
+            }
             <img src = "${state.urlIcon + icon}.png"/>
             <div class="temp">${Math.trunc(list[i].main.temp)} °C</div>
         </div>

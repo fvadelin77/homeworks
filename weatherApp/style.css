@@ -26,7 +26,6 @@ body {
   margin: auto;
   display: flex;
   max-width: 90vw;
-  max-height: 90vh;
   padding: 50px;
   flex-direction: column;
   align-items: center;
@@ -43,6 +42,7 @@ input[name="location-input"] {
   background-color: rgba(240, 255, 255, 0.838);
   width: 40%;
   flex-grow: 1;
+  color: rgb(80, 80, 80);
 }
 
 .input-bar {
@@ -68,6 +68,7 @@ input[name="location-input"] {
   border: none;
   border-radius: 20px;
   background-color: rgba(240, 255, 255, 0.838);
+  color: rgb(80, 80, 80);
 }
 .input-btns > input:link {
   background-color: rgba(240, 255, 255, 0.838);
@@ -205,13 +206,12 @@ input[name="location-input"] {
 
 .forecastDaily {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: rgba(240, 255, 255, 0.5);
   border-radius: 20px;
   padding: 10px;
   width: 100%;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 10px;
   overflow-x: auto;
   flex: none;
@@ -223,11 +223,10 @@ input[name="location-input"] {
 
 .forecastElemDaily {
   display: flex;
-  flex-direction: column;
-  /* border: 1px solid black; */
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
+  flex-grow: 1;
   background-color: rgba(240, 255, 255, 0.838);
   border-radius: 10px;
   padding: 10px;
@@ -243,6 +242,13 @@ input[name="location-input"] {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.date-hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
