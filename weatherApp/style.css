@@ -244,6 +244,7 @@ input[name="location-input"] {
   background-color: rgba(240, 255, 255, 0.838);
   border-radius: 10px;
   padding: 10px;
+  position: relative;
 }
 
 .forecastElem img {
@@ -306,4 +307,11 @@ input[name="location-input"] {
 
 .hidden {
   display: none;
+}
+
+.descrForecast {
+  position: absolute;
+  left: 50%;
+  top: 39%;
+  transform: translate(-50%, 0);
 }

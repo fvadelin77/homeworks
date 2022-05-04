@@ -179,7 +179,9 @@ function populateForecast() {
       date.getMinutes() + "0"
     }</div>
             </div>
-            <div><i>${list[i].weather[0].description}</i></div>
+            <div class="descrForecast"><i>${
+              list[i].weather[0].description
+            }</i></div>
             <div class="icon-temp">
                 ${
                   list[i].rain === undefined
