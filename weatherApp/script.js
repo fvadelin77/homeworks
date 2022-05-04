@@ -52,6 +52,7 @@ function populateCurrent() {
   getDateTime();
   getSecondaryData();
   let locationInput = document.querySelector("input[name=location-input]");
+  let forecast = document.querySelector(".forecast");
   let cr = state.current;
   console.log(cr);
   let crWeather = cr.weather[0];
@@ -108,6 +109,7 @@ function populateCurrent() {
   elem.innerHTML = str;
   locationInput.value = "";
   elem.classList.remove("hidden");
+  forecast.classList.add("hidden");
 }
 
 function getDateTime() {
@@ -201,14 +203,11 @@ function populateForecast() {
 }
 
 async function getForecastedData() {
-  let location = document.querySelector("input[name=location-input]");
-  let locationTrimmed = location.value.trim();
-  if (!locationTrimmed) {
+  let location = state.current.name;
+  if (!location) {
     return;
   } else {
-    let responseForecast = await fetch(
-      state.urlForecast + `${locationTrimmed.toLowerCase()}`
-    );
+    let responseForecast = await fetch(state.urlForecast + `${location}`);
     state.forecast = await responseForecast.json();
   }
 }
