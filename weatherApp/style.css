@@ -12,6 +12,10 @@
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   background-image: linear-gradient(
     to bottom right,
@@ -303,10 +307,6 @@ input[name="location-input"] {
 }
 .temp {
   flex-shrink: 0;
-}
-
-.hidden {
-  display: none;
 }
 
 .descrForecast {
