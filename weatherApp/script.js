@@ -12,7 +12,6 @@ async function getCurrentData() {
   let locationTrimmed = location.trim();
   let loader = document.querySelector(".lds-ring");
   let warning = document.querySelector(".warning");
-  //   let letters = /^[A-Za-z-]+$/;
 
   loader.classList.toggle("hidden");
   if (!location) {
@@ -120,7 +119,6 @@ function getDateTime() {
 }
 
 function getSecondaryData() {
-  // state.current.main.pressure
   let pressure = document.querySelector(".pressure");
   let rain = document.querySelector(".rain");
   let wind = document.querySelector(".wind");
@@ -129,15 +127,9 @@ function getSecondaryData() {
     maximumFractionDigits: 2,
     minimumFractionDigits: 2,
   });
-  //   if (!state.current.rain) {
-  //     precip.innerHTML = "Rain 1h: 0 mm/km²";
-  //   } else {
-  //     precip.innerHTML = `Rain (1h): ${state.current.rain["1h"]} mm/km²`;
-  //   }
   pressure.innerHTML = `Pressure: ${state.current.main.pressure} hPa`;
   rain.innerHTML = `Humidity: ${state.current.main.humidity}%`;
   wind.innerHTML = `Wind: ${windFormated} km/h`;
-
   initMap();
 }
 
@@ -162,8 +154,7 @@ function populateForecast() {
   let elem = document.querySelector(".forecast");
   let warning = document.querySelector(".warning");
   let str = "";
-  //   let dateInitial = new Date(list[0].dt * 1000);
-  //   let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
+
   if (state.current === undefined) {
     warning.classList.remove("hidden");
     warning.value = 'Get "Current weather" first';
@@ -178,23 +169,28 @@ function populateForecast() {
     let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
     let icon = list[i].weather[0].icon;
     str += `
-    <div class="forecastElem">
-    <div class="date-hour">
-    <div class="date">${dayOfWeek}, ${date.getDate()}/${date.getMonth() + 1}
-    </div>
-    <div class="hour">${date.getHours()}:${date.getMinutes() + "0"}</div>
-    </div>
-    <div><i>${list[i].weather[0].description}</i></div>
-    <div class="icon-temp">
-    ${
-      list[i].rain === undefined
-        ? ""
-        : `<div class="rainProb">${Math.round(list[i].pop * 100)}%</div>`
-    }
-        <img src = "${state.urlIcon + icon}.png"/>
-        <div class="temp">${Math.round(list[i].main.temp)} °C</div>
+        <div class="forecastElem">
+            <div class="date-hour">
+                <div class="date">${dayOfWeek}, ${date.getDate()}/${
+      date.getMonth() + 1
+    }</div>
+                <div class="hour">${date.getHours()}:${
+      date.getMinutes() + "0"
+    }</div>
             </div>
+            <div><i>${list[i].weather[0].description}</i></div>
+            <div class="icon-temp">
+                ${
+                  list[i].rain === undefined
+                    ? ""
+                    : `<div class="rainProb">${Math.round(
+                        list[i].pop * 100
+                      )}%</div>`
+                }
+                <img src = "${state.urlIcon + icon}.png"/>
+                <div class="temp">${Math.round(list[i].main.temp)} °C</div>
             </div>
+        </div>
             `;
   }
   console.log(state.forecast);
@@ -212,6 +208,12 @@ async function getForecastedData() {
   }
 }
 
+////// Notes
+
+//   let letters = /^[A-Za-z-]+$/;
+//   let dateInitial = new Date(list[0].dt * 1000);
+//   let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
+
 // function isLooseEquals (val1,val2) {
 // if (val1 === val2) {
 //   return true;
@@ -222,5 +224,4 @@ async function getForecastedData() {
 // ) {
 // }
 // }
-
 // retrive data
