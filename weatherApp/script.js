@@ -132,7 +132,7 @@ function getSecondaryData() {
   //   } else {
   //     precip.innerHTML = `Rain (1h): ${state.current.rain["1h"]} mm/km²`;
   //   }
-  pressure.innerHTML = `Pressure: ${state.current.main.grnd_level} hPa`;
+  pressure.innerHTML = `Pressure: ${state.current.main.pressure} hPa`;
   rain.innerHTML = `Humidity: ${state.current.main.humidity}%`;
   wind.innerHTML = `Wind: ${windFormated} km/h`;
 
