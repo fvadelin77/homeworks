@@ -53,16 +53,17 @@ function populateCurrent() {
   let locationInput = document.querySelector("input[name=location-input]");
   let forecast = document.querySelector(".forecast");
   let cr = state.current;
-  console.log(cr);
   let crWeather = cr.weather[0];
   let location = document.querySelector(".location-icon");
   let celsius = document.querySelector(".celsius");
   let time = document.querySelector(".time");
   let min = document.querySelector(".min-temp");
   location.innerHTML = `
-    <div class = "location">${cr.name}, ${cr.sys.country}</div>
-    <img src = "${state.urlIcon + crWeather.icon}.png"/>
-    <div class="descr">${crWeather.description}</div>
+                        <div class = "location">${cr.name}, ${
+    cr.sys.country
+  }</div>
+                        <img src = "${state.urlIcon + crWeather.icon}.png"/>
+                        <div class="descr">${crWeather.description}</div>
     `;
   celsius.innerHTML = `${Math.round(cr.main.temp)}°C`;
   min.innerHTML = `Min / Max temp.: ${Math.round(
@@ -193,7 +194,6 @@ function populateForecast() {
         </div>
             `;
   }
-  console.log(state.forecast);
   elem.innerHTML = str;
   document.querySelector(".forecast").classList.remove("hidden");
 }
