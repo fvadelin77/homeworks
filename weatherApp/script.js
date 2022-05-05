@@ -20,7 +20,7 @@ async function getCurrentData() {
     warning.value = "Location cannot be empty !";
     setTimeout(function () {
       warning.classList.add("hidden");
-    }, 3000);
+    }, 3500);
     return;
   } else {
     let responseCurrent = await fetch(
@@ -33,7 +33,7 @@ async function getCurrentData() {
       location = "";
       setTimeout(function () {
         warning.classList.add("hidden");
-      }, 3000);
+      }, 3500);
       return;
     } else {
       state.current = await responseCurrent.json();
@@ -69,7 +69,7 @@ function populateCurrent() {
   min.innerHTML = `Min / Max temp.: ${Math.round(
     cr.main.temp_min
   )}°C / ${Math.round(cr.main.temp_max)}°C`;
-  time.innerHTML = state.timeDayOfWeek;
+  time.innerHTML = getDateTime();
   document.querySelector(".current-info").classList.remove("hidden");
 
   // Daily forecast
@@ -79,18 +79,27 @@ function populateCurrent() {
   for (let i = 0; i < 9; i++) {
     let date = new Date(list[i].dt * 1000);
     let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let hours = date.getHours();
+    let minutes = date.getMinutes() + "0";
+    if (day >= 0 && day < 10) {
+      day = "0" + day;
+    }
+    if (month >= 0 && month < 10) {
+      month = "0" + month;
+    }
+    if (hours >= 0 && hours < 10) {
+      hours = "0" + hours;
+    }
     let icon = list[i].weather[0].icon;
 
     str += `
             <div class="forecastElemDaily">
             <div class="date-hour">
-            <div class="date">${dayOfWeek}, ${date.getDate()}/${
-      date.getMonth() + 1
-    }
+            <div class="date">${dayOfWeek}, ${day}/${month}
             </div>
-            <div class="hour">${date.getHours()}:${
-      date.getMinutes() + "0"
-    }</div>
+            <div class="hour">${hours}:${minutes}</div>
             </div>
             <div class="icon-temp">
             <img src = "${state.urlIcon + icon}.png"/>
@@ -110,13 +119,18 @@ function populateCurrent() {
   locationInput.value = "";
   elem.classList.remove("hidden");
   forecast.classList.add("hidden");
+  document.querySelector(".h24").classList.remove("hidden");
+  document.querySelector("input[value=Forecast]").removeAttribute("disabled");
 }
 
 function getDateTime() {
   let date = new Date(state.current.dt * 1000);
   let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "long" });
-  let time = `${date.getHours()}:${date.getMinutes()}`;
-  state.timeDayOfWeek = `${dayOfWeek}, ${time}`;
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  hours = hours >= 0 && hours < 10 ? "0" + hours : hours;
+  let time = `${hours}:${minutes}`;
+  return `${dayOfWeek}, ${time}`;
 }
 
 function getSecondaryData() {
@@ -165,19 +179,29 @@ function populateForecast() {
     return;
   }
   let list = state.forecast.list;
+
+  let previousDay = 0;
   for (let i = 0; i < list.length; i++) {
     let date = new Date(list[i].dt * 1000);
-    let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "short" });
+    let minutes = date.getMinutes() + "0";
+    let hours = date.getHours();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    hours = hours >= 0 && hours < 10 ? "0" + hours : hours;
+    day = day >= 0 && day < 10 ? "0" + day : day;
+    month = month >= 0 && month < 10 ? "0" + month : month;
+    let dayOfWeek = date.toLocaleDateString("en-US", { weekday: "long" });
     let icon = list[i].weather[0].icon;
+
     str += `
+    ${
+      day !== previousDay
+        ? `<div class="dateForecast">${dayOfWeek}, ${day}/${month}</div>`
+        : ""
+    }
         <div class="forecastElem">
             <div class="date-hour">
-                <div class="date">${dayOfWeek}, ${date.getDate()}/${
-      date.getMonth() + 1
-    }</div>
-                <div class="hour">${date.getHours()}:${
-      date.getMinutes() + "0"
-    }</div>
+                <div class="hour">${hours}:${minutes}</div>
             </div>
             <div class="descrForecast"><i>${
               list[i].weather[0].description
@@ -195,9 +219,16 @@ function populateForecast() {
             </div>
         </div>
             `;
+    if (previousDay !== day) {
+      previousDay = day;
+    }
   }
   elem.innerHTML = str;
   document.querySelector(".forecast").classList.remove("hidden");
+  document.querySelector(".days5").classList.remove("hidden");
+  document
+    .querySelector("input[value='Forecast']")
+    .setAttribute("disabled", "false");
 }
 
 async function getForecastedData() {

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="path/to/dayjs/dayjs.min.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      import { getDatabase } from "";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyArABkjrYbplsjdYGnfsp0bBSd7fYiDfBY",
+        authDomain: "chatbox-752d6.firebaseapp.com",
+        databaseURL:
+          "https://chatbox-752d6-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "chatbox-752d6",
+        storageBucket: "chatbox-752d6.appspot.com",
+        messagingSenderId: "884330786149",
+        appId: "1:884330786149:web:9f5d6045fe8a72dccd458c",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const database = getDatabase(app);
+      const messagesRef = ref(db, "messages");
+      onValue(messagesRef, function (snapshot) {
+        const data = snapshot.val();
+        let key = snapshot.key;
+        displayMessage(data);
+      });
+    </script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="chatContainer" class="hidden">
+      <div id="chat">
+        <div class="chat-bubble self">
+          <div class="username">Bogdan</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble self">
+          <div class="username">Bogdan</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble self">
+          <div class="username">Bogdan</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble">
+          <div class="username">John Doe</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+        <div class="chat-bubble self">
+          <div class="username">Bogdan</div>
+          <div class="message">Cursul de frontend e foarte misto</div>
+          <div class="time">19:34</div>
+        </div>
+      </div>
+      <div id="controls">
+        <form onsubmit="event.preventDefault();addMessage();">
+          <textarea id="chatMessage"></textarea>
+          <button>
+            <img src="images/send-icon.svg" style="width: 12px; height: auto" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

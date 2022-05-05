@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow-rgb: 11, 20, 26;
+}
+
+.hidden {
+  display: hidden !important;
+}
+
+#chatMessage {
+  flex: 1;
+}
+
+#chatContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 222, 179, 0.262);
+  border-radius: 30px;
+  flex: 1;
+  overflow: auto;
+}
+
+#chat-message {
+  padding: 20px;
+}
+
+.chat-bubble {
+  border: 1px solid #f4bd6b;
+  border-radius: 30px;
+  padding: 3px 20px;
+  margin-bottom: 10px;
+  width: fit-content;
+  max-width: 90%;
+  align-self: flex-start;
+  box-shadow: 0 1px 0.5px rgba(var(--shadow-rgb), 0.13);
+}
+
+.chat-bubble.self {
+  margin-left: 100px;
+  flex: 1;
+  align-self: flex-end;
+  background-color: #d1f4cc;
+  box-shadow: 0 1px 0.5px rgba(var(--shadow-rgb), 0.13);
+}
+
+.chat-bubble.self > .username {
+  display: none;
+}
+
+.chat-bubble.self + .chat-bubble.self {
+  margin-top: 0px;
+}
+
+.chat-bubble.other {
+  background-color: #ffffff;
+  box-shadow: 0 1px 0.5px rgba(var(--shadow-rgb), 0.13);
+}
+
+.chat-bubble > .time {
+  float: right;
+  font-size: 0.7rem;
+}
+
+.chat-bubble > .username {
+  font-style: italic;
+  color: #53bded;
+  font-size: 0.9rem;
+}
+
+.error {
+  border-color: red;
+}
+
+controls > form {
+  display: flex;
+  flex-direction: row;
+}

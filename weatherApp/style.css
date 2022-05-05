@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px;
+  gap: 25px;
   /* border: 1px solid black; */
 }
 
@@ -57,11 +57,6 @@ input[name="location-input"] {
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 10px;
-
-  /* flex-direction: row;
-  flex-wrap: wrap;
-  flex: 5;
-  gap: 20px; */
 }
 
 .input-btns {
@@ -106,6 +101,7 @@ input[name="location-input"] {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .secondary-info {
@@ -216,8 +212,8 @@ input[name="location-input"] {
 }
 
 .location-icon img {
-  width: 35px;
-  height: auto;
+  width: 70px;
+  height: 35px;
   object-fit: none;
   flex: 1 0 fit-content;
 }
@@ -255,6 +251,12 @@ input[name="location-input"] {
   width: 50px;
   height: 40px;
   object-fit: none;
+}
+
+.dateForecast {
+  margin-left: 5px;
+  margin-bottom: -5px;
+  font-style: italic;
 }
 
 .forecastDaily {
@@ -314,4 +316,20 @@ input[name="location-input"] {
   left: 50%;
   top: 39%;
   transform: translate(-50%, 0);
+}
+
+.h24,
+.days5 {
+  font-weight: 300;
+  font-style: italic;
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-top: -15px;
+  margin-bottom: -20px;
+  color: rgba(92, 92, 92, 0.666);
+}
+
+input[type="button"]:disabled {
+  background-color: rgba(184, 187, 187, 0.838);
+  cursor: default;
 }

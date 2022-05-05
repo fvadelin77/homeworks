@@ -32,7 +32,12 @@
             type="button"
             value="Current weather"
           />
-          <input onclick="populateForecast();" type="button" value="Forecast" />
+          <input
+            onclick="populateForecast();"
+            type="button"
+            value="Forecast"
+            disabled="true"
+          />
         </div>
       </div>
       <div class="current-info hidden">
@@ -42,7 +47,6 @@
             <div class="location-icon">
               <img src="https://openweathermap.org/img/w/04n.png" />
             </div>
-
             <div class="time"></div>
             <div class="min-max">
               <div class="min-temp"></div>
@@ -60,8 +64,10 @@
           </div>
         </div>
       </div>
+      <div class="h24 hidden">24h Forecast</div>
       <div class="forecastDaily hidden"></div>
       <div id="map" style="width: 100%; height: 300px"></div>
+      <div class="days5 hidden">5 Day Forecast</div>
       <div class="forecast hidden"></div>
     </div>
   </body>
