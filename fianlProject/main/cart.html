@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIIT Outdoor - Cart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <script src="global.js"></script>
+    <script src="components.js"></script>
+    <script src="cart.js"></script>
+
+    <link href="for-nav-bar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body onload="populateCart();updateBadges();">
+    <!-- bara navigatie -->
+    <navbar-component></navbar-component>
+    <!-- Cart table -->
+
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-lg-9 d-flex flex-column p-4 gap-3 cart-table"
+          style="background-color: whitesmoke"
+        >
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col">Nume produs</th>
+                <th scope="col">Pret</th>
+                <th scope="col">Cantitate</th>
+                <th scope="col">Subtotal</th>
+                <!-- <th scope="col"></th> -->
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div class="order-total"></div>
+          <input
+            type="button"
+            class="btn btn-primary"
+            value="Actualizeaza cos"
+            onclick="updateCart();"
+          />
+        </div>
+        <div class="summary col-lg-3 d-flex flex-column p-4 gap-3">
+          <table class="table cart-summary">
+            <thead>
+              <tr>
+                <th scope="row"><h4>Sumarizare cos</h4></th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+              </tr>
+            </tbody>
+          </table>
+          <input
+            type="button"
+            class="btn btn-primary"
+            value="Checkout"
+            onclick=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

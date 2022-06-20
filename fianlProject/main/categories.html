@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <link href="for-nav-bar.css" rel="stylesheet" />
+    <link href="products-page.css" rel="stylesheet" />
+    <script src="global.js"></script>
+    <script src="components.js"></script>
+    <script src="products.js"></script>
+    <script src="categories.js"></script>
+  </head>
+  <body onload="drawCategory();">
+    <!-- bara navigatie -->
+    <!-- bara navigatie -->
+    <navbar-component></navbar-component>
+    <!-- LAYOUT -->
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="container d-flex flex-column">
+            <div class="row bg-light pt-3" id="products-grid"></div>
+            <!-- Pagination -->
+            <!-- <div class="row bg-light">
+              <nav
+                class="pagination align-items-center justify-content-end"
+                aria-label="Page navigation example"
+              >
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<html>
+  <head>
+    <title></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link href="for-nav-bar.css" rel="stylesheet" />
+    <script src="global.js"></script>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body onload="updateBadges();">
+    <!-- banner promo -->
+    <div class="container-promo container-fluid m-0 d-none d-md-flex">
+      <span class="promo-text">MID SEASON SALE până la -30%</span>
+      <button
+        class="btn btn-outline-light"
+        onclick="window.location='categories.html?categ=recipiente'"
+      >
+        Recipiente
+      </button>
+      <button
+        class="btn btn-outline-light"
+        onclick="window.location='categories.html?categ=ceasuri'"
+      >
+        SMARTWATCHES
+      </button>
+    </div>
+    <!-- bara navigatie -->
+    <navbar-component></navbar-component>
+    <!-- carousel -->
+    <div class="bg-dark text-light p-2 text-center">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div
+            class="carousel-item active"
+            onclick="window.location = 'categories.html?categ=ceasuri'"
+          >
+            <img
+              src="img/smartwatches-2.jpeg"
+              class="d-block w-100 carousel-img img-fluid mx-auto"
+              alt="..."
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onclick="window.location = 'categories.html?categ=ochelari'"
+          >
+            <img
+              src="img/sunglasses.jpeg"
+              class="d-block w-100 carousel-img img-fluid mx-auto"
+              alt="..."
+            />
+          </div>
+          <div
+            class="carousel-item"
+            onclick="window.location = 'categories.html?categ=recipiente'"
+          >
+            <img
+              src="img/waterbottle.png"
+              class="d-block w-100 carousel-img img-fluid mx-auto"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row gap-0">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 px-0">
+          <a href="categories.html?categ=alpinism" class="img-trio nav-link">
+            <img
+              class="img-trio-elem img-fluid mx-auto"
+              src="img/home-carousel/alpinism.jpeg"
+              alt=""
+              srcset=""
+            />
+            <div class="middle">
+              <div class="text">ALPINISM</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 px-0">
+          <a href="categories.html?categ=lanterna" class="img-trio nav-link">
+            <img
+              class="img-trio-elem img-fluid mx-auto"
+              src="img/home-carousel/lanterne.webp"
+              alt=""
+              srcset=""
+            />
+            <div class="middle">
+              <div class="text">LANTERNE</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 px-0">
+          <a href="categories.html?categ=pioleti" class="img-trio nav-link">
+            <img
+              class="img-trio-elem img-fluid mx-auto"
+              src="img/home-carousel/pioleti.jpeg"
+              alt=""
+              srcset=""
+            />
+            <div class="middle">
+              <div class="text">PIOLETI</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Carduri trio -->
+    <div class="container-xl pt-3 mb-3">
+      <div class="row text-center">
+        <div class="col-md">
+          <div class="card p-3">
+            <div class="h1">
+              <i class="bi bi-truck"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Livrare rapida</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card p-3">
+            <div class="h1">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Retur gratuit</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card p-3">
+            <div class="h1">
+              <i class="bi bi-check-lg"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Produse originale</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+
+  cart.js
+// small bug - q = 1 > delete > cosul ramane cu badge "1"
+ -->

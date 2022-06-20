@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+    />
+    <script src="global.js"></script>
+    <script src="products.js"></script>
+    <script src="components.js"></script>
+    <script src="product.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="for-nav-bar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="product.css" />
+    <title>Document</title>
+  </head>
+  <body onload="updateBadges();populateProductPage();">
+    <!-- bara navigatie -->
+    <!-- bara navigatie -->
+    <navbar-component></navbar-component>
+    <div class="container-fluid bg-light p-5">
+      <div class="row">
+        <div class="col col-12 col-md-6">
+          <div
+            id="carouselProductPage"
+            class="carousel carousel-dark slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselProductPage"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselProductPage"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselProductPage"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <!--  -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselProductPage"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselProductPage"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col col-12 col-md-6">
+          <div
+            style="max-width: 600px"
+            class="product-details-wrapper d-flex flex-column justify-content-between"
+          >
+            <div class="title-price">
+              <h1 class="display-6">
+                Sticlă Salewa Aurino Stainless Steel Bottle 1 l Double Lid
+              </h1>
+              <p class="fs-2 fw-bold">120 RON</p>
+            </div>
+            <div class="description">
+              <p class="text-break fs-5">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
+                esse corporis architecto, rerum assumenda facilis est nesciunt
+                eaque molestias, repudiandae molestiae natus dolorem eligendi?
+                Magnam commodi est voluptatem voluptas nemo!
+              </p>
+            </div>
+            <div class="stoc d-flex align-items-center gap-2 link-success">
+              <i class="fs-2 bi bi-boxes"></i>
+              <p class="fs-5 mb-0">
+                In stoc acum:&nbsp;<span class="stocQuantity">2</span>
+              </p>
+            </div>
+            <div class="btns gap-3">
+              <button
+                class="fs-4 btn btn-outline-primary addToCart"
+                type="button"
+              >
+                <i class="bi bi-cart link-primary"></i> Adauga in cos
+              </button>
+              <button
+                class="fs-4 btn btn-outline-danger addToFavorites"
+                type="button"
+              >
+                <i class="bi bi-heart link-danger"></i> Adauga la favorite
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!--  -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+.cart-img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+input[type="number"] {
+  width: 50px;
+  text-align: start;
+}
+
+input[type="button"] {
+  align-self: flex-end;
+}
+
+.order-total {
+  align-self: flex-end;
+}
+
+.cart-table,
+.summary {
+  justify-content: space-between;
+  flex: 1 0 auto;
+}

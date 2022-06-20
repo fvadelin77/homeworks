@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/plugin/customParseFormat.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+      let arr = [
+        {
+          data: "15-06-1985",
+        },
+        {
+          data: "25-07-1976",
+        },
+        {
+          data: "07-08-1945",
+        },
+        {
+          data: "10-09-1999",
+        },
+        {
+          data: "12-10-2000",
+        },
+      ];
+
+      let formatArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        formatArr.push(dayjs(arr[i].data, "DD-MM-YYYY", true));
+      }
+
+      //   console.log(formatArr);
+      function sayHello() {
+        let nume = document.querySelector("[name=nume]").value;
+        document.querySelector("#welcome").innerHTML = "Hello" + nume;
+        nume.replace(/[<]/g, "&lt;").replace(/[>]/g, "&gt;");
+      }
+    </script>
+    <style>
+      .wrapper {
+        display: flex;
+      }
+      .wrapper:hover .da {
+        order: 2;
+      }
+      .wrapper:hover .nu {
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="nume" />;
+    <button>Say Hello</button>
+    <p id="welcome"></p>
+    <div class="wrapper">
+      <div class="da">
+        <button id="da">Da</button>
+      </div>
+      <div class="nu">
+        <button id="nu">Nu</button>
+      </div>
+    </div>
+  </body>
+</html>
