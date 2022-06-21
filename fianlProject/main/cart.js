@@ -18,18 +18,17 @@ function populateCart() {
             <td>
                 <img class="cart-img" src="${cart[i].product.img[0]}"/>
             </td>
-            <td><a class="link-dark" href="product.html?id=${cart[i].dbIdx}">${
-        cart[i].product.name
-      }</a></td>
+            <td><a class="link-dark text-decoration-none" href="product.html?id=${
+              cart[i].dbIdx
+            }">${cart[i].product.name}</a></td>
             <td>${cart[i].product.price} RON</td>
             <td>
                 <input type="number" value="${
                   cart[i].quantity
                 }" min="0" max="100"/>
             </td>
-            <td>${cart[i].product.price * cart[i].quantity} RON</td>
             <td>
-                <button class="btn px-2 py-1" onclick="deleteProduct(${i}); updateBadges();">
+                <button class="btn p-0 fs-5" onclick="deleteProduct(${i}); updateBadges();">
                     <i class="bi bi-x-circle-fill link-danger"></i>
                 </button>
             </td>
@@ -52,18 +51,20 @@ function populateCart() {
   console.log(cart);
   summary.innerHTML = `
   <tr>
-              <th scope="row">Total cos</th>
+              <th scope="row"><div class="fs-6 fw-light">Total cos</div></th>
               <td>${total} RON</td>
             </tr>
             <tr>
-              <th scope="row">Transport curier</th>
+              <th scope="row"><div class="fs-6 fw-light">Transport</div></th>
               <td>${(transport =
                 // lazy
                 cart === null || cart.length === 0 ? 0 : 20)} RON</td>
             </tr>
             <tr>
-              <th scope="row"><h5>Total final</h5></th>
-              <td><h5>${total + transport} RON</h5></td>
+              <th scope="row"><div class="fs-5 fw-normal">Total final</div></th>
+              <td><div class="fs-5 fw-normal">${
+                total + transport
+              } RON</div></td>
             </tr>
 
   `;
@@ -101,3 +102,5 @@ function deleteProduct(posCart) {
   localStorage.setItem("cart", JSON.stringify(cartLocal));
   populateCart();
 }
+
+//  <td>${cart[i].product.price * cart[i].quantity} RON</td> , am scos subtotal din tabel

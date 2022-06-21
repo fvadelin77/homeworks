@@ -35,7 +35,7 @@
     <div class="container">
       <div class="row">
         <div
-          class="col-lg-9 d-flex flex-column p-4 gap-3 cart-table"
+          class="col-lg-9 d-flex flex-column cart-table pb-3"
           style="background-color: whitesmoke"
         >
           <table class="table table-striped">
@@ -43,14 +43,13 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col"></th>
-                <th scope="col">Nume produs</th>
+                <th scope="col">Nume</th>
                 <th scope="col">Pret</th>
-                <th scope="col">Cantitate</th>
-                <th scope="col">Subtotal</th>
-                <!-- <th scope="col"></th> -->
+                <th scope="col">Cant.</th>
+                <th scope="col"></th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody class="fs-6 fw-light"></tbody>
           </table>
           <div class="order-total"></div>
           <input
@@ -60,12 +59,13 @@
             onclick="updateCart();"
           />
         </div>
-        <div class="summary col-lg-3 d-flex flex-column p-4 gap-3">
+        <div class="summary col-lg-3 d-flex flex-column gap-3">
           <table class="table cart-summary">
             <thead>
               <tr>
-                <th scope="row"><h4>Sumarizare cos</h4></th>
-                <td></td>
+                <th scope="row" colspan="2">
+                  <div class="fs-5 fw-normal">Sumarizare cos</div>
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -5,7 +5,7 @@ function populateFavorites() {
   if (favorites === null || favorites.length === 0) {
     str = `
           <tr>
-              <td colspan="6"><h4>Lista favorite goala!</h4></td>
+              <td colspan="6"><div class="fs-5 fw-light">Lista favorite goala!</div></td>
           </tr>           
         `;
   } else {
@@ -18,7 +18,7 @@ function populateFavorites() {
                     favorites[i].product.img[0]
                   }"/>
               </td>
-              <td><a class="link-dark" href="product.html?id=${
+              <td><a class="link-dark text-decoration-none" href="product.html?id=${
                 favorites[i].dbIdx
               }">${favorites[i].product.name}</a></td>
               <td>${favorites[i].product.price} RON</td>

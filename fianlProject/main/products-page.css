@@ -32,3 +32,7 @@
 img:hover {
   cursor: pointer;
 }
+
+.favorites-btn:hover {
+  cursor: pointer;
+}
