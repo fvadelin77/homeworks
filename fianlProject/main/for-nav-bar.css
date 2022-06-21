@@ -8,26 +8,24 @@
   color: #ffffff;
   padding: 5px;
   font-family: "Bebas Neue", cursive;
-  font-size: 20px;
+  /* font-size: 16px; */
+  /* font-weight: 200; */
   gap: 2rem;
 }
 
-.container-promo > .btn {
+.btn-promo {
   border: 2px solid #ffffff;
   border-radius: 0;
-  padding: 2px 40px;
-  font-size: 14px;
-  font-weight: 200;
+  padding: 2px 30px;
+  margin: 0;
+  /* font-size: 14px; */
 }
 
-.container-promo .btn-close {
-  width: 5px;
-  height: 5px;
-  flex-direction: column;
-  position: absolute;
-  right: 10px;
-}
 .navbar {
   font-family: "Bebas Neue", cursive;
-  font-size: 18px;
+  /* font-size: 18px; */
+}
+.promo-text {
+  text-align: center;
+  vertical-align: center;
 }

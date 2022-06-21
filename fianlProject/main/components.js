@@ -1,9 +1,11 @@
 class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `    
+
         <nav
             class="navbar navbar-expand-md bg-dark navbar-dark px-3 d-flex justify-content-between gap-5 sticky-top"
             >
+            <div class="container-sm">            
             <a href="index.html" class="navbar-brand">SIIT Outdoor</a>
             <button
             class="navbar-toggler order-sm-last order-last"
@@ -70,6 +72,7 @@ class Navbar extends HTMLElement {
             <!-- Offcanvas for favorites -->
             <!-- Offcanvas for cart -->
             <!-- Offcanvas for cart -->
+            </div>
             </div>
       </nav>`;
   }
