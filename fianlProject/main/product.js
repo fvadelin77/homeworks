@@ -40,6 +40,7 @@ async function populateProductPage() {
     "onclick",
     `addToLocal('${id}','cart'); updateBadges();`
   );
+  productObj.stoc === "0" ? addToCartBtn.setAttribute("disabled", "") : "";
   addToFavBtn.setAttribute(
     "onclick",
     `addToLocal('${id}','favorites'); updateBadges();`

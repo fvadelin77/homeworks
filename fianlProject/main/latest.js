@@ -30,11 +30,19 @@ async function drawCategory(currentPage) {
                         </div>
                         <div class="btns">
                             
-                            <button class="btn btn-primary" onclick="addToLocal('${
-                              reversedObj[i]
-                            }','cart'); updateBadges();">
+                            <button class="btn ${
+                              state.db[reversedObj[i]].stoc <= 0
+                                ? "btn-warning"
+                                : "btn-primary"
+                            } btn-primary p-1" ${
+      state.db[reversedObj[i]].stoc <= 0 ? "disabled" : ""
+    } onclick="addToLocal('${reversedObj[i]}','cart'); updateBadges();">
                                 <i class="bi bi-cart link-light"></i>
-                                <span class="fw-lighter">Adauga in cos</span>
+                                ${
+                                  state.db[reversedObj[i]].stoc <= 0
+                                    ? "Stoc epuizat"
+                                    : "Adauga in cos"
+                                }
                             </button>
                             
                         </div>

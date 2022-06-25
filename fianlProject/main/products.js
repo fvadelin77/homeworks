@@ -31,15 +31,27 @@ async function draw(currentPage) {
                 fs-3 fs-md-6"  
                 onclick="addToLocal('${key}','favorites'); updateBadges();">
                 </i>
-                <img src="${value.img[0]}" alt="" style="object-fit = cover;" onclick="window.location='product.html?id=${key}'" style="cursor: pointer;"/>
+                <img src="${
+                  value.img[0]
+                }" alt="" style="object-fit = cover;" onclick="window.location='product.html?id=${key}'" style="cursor: pointer;"/>
                 <div class="title-price d-flex flex-column justify-content-start gap-3 align-items-center" onclick="window.location='product.html?id=${key}'" style="cursor: pointer;">
-                  <div class="product-price fs-6 fw-normal">${value.price} RON</div>
-                    <div class="product-title text-center fs-6 fw-lighter">${value.name}</div>
+                  <div class="product-price fs-6 fw-normal">${
+                    value.price
+                  } RON</div>
+                    <div class="product-title text-center fs-6 fw-lighter">${
+                      value.name
+                    }</div>
                 </div>
                   <div class="btns">      
-                    <button class="btn btn-primary p-1" onclick="addToLocal('${key}','cart'); updateBadges();">
+                    <button class="btn ${
+                      value.stoc <= 0 ? "btn-warning" : "btn-primary"
+                    } btn-primary p-1" ${
+      value.stoc <= 0 ? "disabled" : ""
+    } onclick="addToLocal('${key}','cart'); updateBadges();">
                       <i class="bi bi-cart link-light fs-6"></i>
-                      <span class="fw-lighter">Adauga in cos</span>
+                      <span class="fw-lighter">
+                        ${value.stoc <= 0 ? "Stoc epuizat" : "Adauga in cos"}
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -55,6 +67,7 @@ function drawPagination(currentPage) {
   // check nr of total products
   state.totalProducts = Object.keys(state.db).length;
   console.log(state.totalProducts);
+  console.log(state.db);
   let totalPages = Math.floor(state.totalProducts / 24);
   let str = "";
   for (let i = 1; i <= totalPages; i++) {

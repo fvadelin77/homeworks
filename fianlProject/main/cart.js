@@ -1,7 +1,27 @@
-function populateCart() {
+let state = {};
+let soldOff = [];
+
+async function getData() {
+  let response = await fetch(
+    "https://webstore-a2c89-default-rtdb.europe-west1.firebasedatabase.app/" +
+      ".json"
+  );
+  state.db = await response.json();
+}
+
+async function updateCartItemsDetails() {
+  await getData();
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  for (cartObj of cart) {
+    cartObj.product = state.db[cartObj.dbIdx];
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+async function populateCart() {
+  await updateCartItemsDetails();
   let cart = JSON.parse(localStorage.getItem("cart"));
   let tbody = document.querySelector("tbody");
-
   let str = "";
   let total = 0;
   if (cart === null || cart.length === 0) {
@@ -10,10 +30,20 @@ function populateCart() {
             <td colspan="6"><h4>Cos gol!</h4></td>
         </tr>           
       `;
+    // stoc < cos
+    // caz depasit stoc
+    // updatez produsul in cart dupa state.db de fiecare data cand se deseneaza cosul
   } else {
     for (let i = 0; i < cart.length; i++) {
+      if (cart[i].quantity > cart[i].product.stoc || cart[i].quantity === 0) {
+        if (!soldOff.includes(cart[i].dbIdx)) {
+          soldOff.push(cart[i].dbIdx);
+        }
+      } else {
+        soldOff = soldOff.filter((idx) => idx !== cart[i].dbIdx);
+      }
       str += `
-        <tr>
+        <tr class=${soldOff.includes(cart[i].dbIdx) ? "table-danger" : ""}>
             <th scope="row">${i + 1}</th>
             <td>
                 <img class="cart-img" src="${cart[i].product.img[0]}"/>
@@ -25,7 +55,10 @@ function populateCart() {
             <td>
                 <input type="number" value="${
                   cart[i].quantity
-                }" min="0" max="100"/>
+                  //https://stackoverflow.com/questions/9555143/html-maxlength-attribute-not-working-on-chrome-and-safari
+                }" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" 
+                maxlength="2"
+                oninput="if(this.value.length > 2)this.value = this.value.slice(0, 2);"/>
             </td>
             <td>
                 <button class="btn p-0 fs-5" onclick="deleteProduct(${i}); updateBadges();">
@@ -36,19 +69,17 @@ function populateCart() {
     
     `;
       total += cart[i].product.price * cart[i].quantity;
+      checkForChanges();
     }
   }
 
   tbody.innerHTML = str;
-
   // Update total
   document.querySelector(".order-total").innerHTML = `
   <div><h5>Total cos: ${total} RON </h5></div>
   `;
-
   // Update summary
   let summary = document.querySelector(".cart-summary > tbody");
-  console.log(cart);
   summary.innerHTML = `
   <tr>
               <th scope="row"><div class="fs-6 fw-light">Total cos</div></th>
@@ -75,7 +106,6 @@ function updateCart() {
   let cartLocal = JSON.parse(localStorage.getItem("cart"));
   let qInput = document.querySelectorAll("input[type='number']");
   // Check daca intre timp, pe pagina de produse, s-a adaugat un produs in plus
-  console.log(cartLocal.length, qInput.length);
   if (cartLocal.length !== qInput.length) {
     populateCart();
     /////// softbug - q change + newproduct added -> actualizeaza cos
@@ -103,4 +133,34 @@ function deleteProduct(posCart) {
   populateCart();
 }
 
+function checkForChanges() {
+  let myModalBootstrap = new bootstrap.Modal(
+    document.getElementById("cartModal")
+  );
+  let modalTitle = document.querySelector(".modal-title");
+  let modalContent = document.querySelector(".modal-body");
+  let checkoutBtn = document.querySelector("input[value='Checkout']");
+
+  if (!soldOff.length <= 0) {
+    modalTitle.innerHTML = "Stoc insuficient pentru urmatoarele produse";
+    let str = "";
+    for (let productIdx of soldOff) {
+      console.log(productIdx);
+      str += `<div class="text-danger">${state.db[productIdx].name} - Stoc: ${state.db[productIdx].stoc}</div>`;
+    }
+    modalContent.innerHTML = str;
+    str = "";
+    modalContent.insertAdjacentHTML(
+      "beforeend",
+      "<br>Pentru a finaliza comanda ajustati cantitatea sau eliminati produsul din cos"
+    );
+    console.log(soldOff.length);
+  }
+  if (soldOff.length > 0) {
+    checkoutBtn.setAttribute("disabled", "");
+    myModalBootstrap.show();
+  } else {
+    checkoutBtn.removeAttribute("disabled");
+  }
+}
 //  <td>${cart[i].product.price * cart[i].quantity} RON</td> , am scos subtotal din tabel

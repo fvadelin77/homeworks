@@ -14,8 +14,6 @@ function updateBadges() {
               </button>
               
                       `;
-
-    console.log(typeof localStorage.getItem("cart"));
   } else {
     cartBadge.innerHTML = `
     <button class="btn position-relative trigger-hover">
