@@ -35,7 +35,9 @@ async function populateCart() {
     // updatez produsul in cart dupa state.db de fiecare data cand se deseneaza cosul
   } else {
     for (let i = 0; i < cart.length; i++) {
-      if (cart[i].quantity > cart[i].product.stoc || cart[i].quantity === 0) {
+      cartQty = Number(cart[i].quantity);
+      stockQty = Number(cart[i].product.stoc);
+      if (cartQty > stockQty || cartQty === 0) {
         if (!soldOff.includes(cart[i].dbIdx)) {
           soldOff.push(cart[i].dbIdx);
         }
@@ -69,8 +71,8 @@ async function populateCart() {
     
     `;
       total += cart[i].product.price * cart[i].quantity;
-      checkForChanges();
     }
+    checkForChanges();
   }
 
   tbody.innerHTML = str;
@@ -123,7 +125,7 @@ function updateCart() {
     }
   }
   localStorage.setItem("cart", JSON.stringify(cartLocal));
-  populateCart();
+  window.location = "cart.html";
 }
 
 function deleteProduct(posCart) {
@@ -140,12 +142,11 @@ function checkForChanges() {
   let modalTitle = document.querySelector(".modal-title");
   let modalContent = document.querySelector(".modal-body");
   let checkoutBtn = document.querySelector("input[value='Checkout']");
-
-  if (!soldOff.length <= 0) {
+  console.log(soldOff);
+  if (soldOff.length > 0) {
     modalTitle.innerHTML = "Stoc insuficient pentru urmatoarele produse";
     let str = "";
     for (let productIdx of soldOff) {
-      console.log(productIdx);
       str += `<div class="text-danger">${state.db[productIdx].name} - Stoc: ${state.db[productIdx].stoc}</div>`;
     }
     modalContent.innerHTML = str;
@@ -154,13 +155,12 @@ function checkForChanges() {
       "beforeend",
       "<br>Pentru a finaliza comanda ajustati cantitatea sau eliminati produsul din cos"
     );
-    console.log(soldOff.length);
-  }
-  if (soldOff.length > 0) {
     checkoutBtn.setAttribute("disabled", "");
     myModalBootstrap.show();
+  }
+  if (soldOff.length > 0) {
   } else {
     checkoutBtn.removeAttribute("disabled");
   }
 }
-//  <td>${cart[i].product.price * cart[i].quantity} RON</td> , am scos subtotal din tabel
+//  <td>${cart[i].product.price * cart[i].quantity} RON</td> , am scos subtotal din tabel (overflow pe mobile)

@@ -1,3 +1,11 @@
+let notification = (msg) => {
+  let toastElem = document.getElementById("liveToast");
+  let toast = new bootstrap.Toast(toastElem);
+  let toastBody = document.querySelector(".toast-body");
+  toastBody.innerHTML = msg;
+  toast.show();
+};
+
 function updateBadges() {
   // Cart
   let cartLocal = JSON.parse(localStorage.getItem("cart"));
@@ -69,6 +77,9 @@ function addToLocal(id, list) {
       // verific daca exista deja in`${list}` daca exista return
       for (let j = 0; j < temp.length; j++) {
         if (temp[j].dbIdx === id && list === "favorites") {
+          notification(
+            "Produs deja existent in lista de favorite <i class='bi bi-heart-fill'></i> !"
+          );
           return;
         } else if (temp[j].dbIdx !== id && list === "favorites") {
           localStorage.setItem(`${list}`, JSON.stringify(temp));
@@ -76,6 +87,14 @@ function addToLocal(id, list) {
           console.log("Produs existent deja in cos, cantitate +1");
           temp[j].quantity = temp[j].quantity * 1 + 1;
           localStorage.setItem(`${list}`, JSON.stringify(temp));
+          console.log(value);
+          notification(
+            `Produsul <u>${value.name}</u> a fost adaugat ${
+              list === "cart"
+                ? "in cos <i class='bi bi-cart-fill'></i> !"
+                : "la favorite <i class='bi bi-heart-fill'></i> !"
+            }`
+          );
           return;
         }
       }
@@ -85,9 +104,15 @@ function addToLocal(id, list) {
         quantity: 1,
         dbIdx: id,
       };
-      console.log();
       temp.push(toPush);
       localStorage.setItem(`${list}`, JSON.stringify(temp));
+      notification(
+        `Produsul <u>${value.name}</u> a fost adaugat ${
+          list === "cart"
+            ? "in cos <i class='bi bi-cart-fill'></i> !"
+            : "la favorite <i class='bi bi-heart-fill'></i> !"
+        }`
+      );
       break;
     } else {
       continue;
