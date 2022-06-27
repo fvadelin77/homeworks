@@ -24,7 +24,6 @@ async function draw(currentPage) {
   let counter = 0;
   for (let [key, value] of Object.entries(state.db)) {
     counter++;
-    // console.log(counter, key);
     if (counter >= currentPage * 24 && counter < (currentPage + 1) * 24) {
       str += `
       <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-3 product-img">
