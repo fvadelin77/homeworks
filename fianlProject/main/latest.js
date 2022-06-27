@@ -1,5 +1,7 @@
 async function drawCategory(currentPage) {
+  loader();
   await getData();
+
   let productsGrid = document.getElementById("products-grid");
   let str = "";
   let reversedObj = Object.keys(state.db).reverse();
@@ -52,4 +54,5 @@ async function drawCategory(currentPage) {
   }
   productsGrid.innerHTML = str;
   updateBadges();
+  loader();
 }

@@ -11,7 +11,9 @@ async function getData() {
 }
 
 async function draw(currentPage) {
+  loader();
   await getData();
+  loader();
   let productsGrid = document.getElementById("products-grid");
   let str = "";
 
@@ -63,6 +65,7 @@ async function draw(currentPage) {
 }
 
 function drawPagination(currentPage) {
+  setTimeout(loader(), 5000);
   let pagination = document.querySelector("ul.pagination");
   // check nr of total products
   state.totalProducts = Object.keys(state.db).length;
@@ -93,6 +96,7 @@ function drawPagination(currentPage) {
         </a>
     </li>
                         `;
+  setTimeout(loader(), 5000);
 }
 
 // functie care returneaza buton active sau disabled, in functie de stocul produsului

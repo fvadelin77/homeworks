@@ -36,3 +36,33 @@ img:hover {
 .favorites-btn:hover {
   cursor: pointer;
 }
+
+.lds-ellipsis {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.lds-ellipsis div {
+  background: rgb(44, 125, 56);
+  width: 17px;
+  height: 17px;
+}
+
+.overlay {
+  position: relative;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.overlay:after {
+  content: "";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(44, 125, 56, 0.303);
+}

@@ -53,6 +53,13 @@ class Navbar extends HTMLElement {
             <ul
                 class="navbar-nav ms-auto flex-row flex-fill justify-content-between justify-content-xs-between justify-content-sm-between justify-content-md-center justify-content-lg-center justify-content-xl-center"
             >
+            <li class="nav-item d-flex align-items-center">
+            <a class="nav-link">
+                <div class="spinner-border spinner-border-sm text-light fs-6 d-none" role="status">
+                    <div class="visually-hidden">Loading...</div>
+                </div>
+                </a>
+            </li>
                 <li class="nav-item">
                 <a href="favorites.html" class="nav-link favorites">
                     <button class="btn position-relative">

@@ -95,6 +95,7 @@ function addToLocal(id, list) {
                 : "la favorite <i class='bi bi-heart-fill'></i> !"
             }`
           );
+
           return;
         }
       }
@@ -119,3 +120,8 @@ function addToLocal(id, list) {
     }
   }
 }
+
+let loader = () => {
+  let spinner = document.querySelector(".spinner-border");
+  spinner.classList.toggle("d-none");
+};

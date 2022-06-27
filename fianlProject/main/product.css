@@ -1,13 +1,3 @@
 .product-details-wrapper {
   height: 100%;
 }
-.description {
-}
-
-.btns {
-  display: flex;
-  justify-content: space-between;
-}
-.btns > * {
-  flex: 1 0 auto;
-}

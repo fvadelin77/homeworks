@@ -2,6 +2,7 @@ let mapped = [];
 let totalProducts = 0;
 
 async function drawCategory(currentPage) {
+  loader();
   await getData();
   let productsGrid = document.getElementById("products-grid");
   let str = "";
@@ -64,6 +65,7 @@ async function drawCategory(currentPage) {
   }
   productsGrid.innerHTML = str;
   updateBadges();
+  loader();
 }
 
 // let mapped = state.db.map(function (x) {

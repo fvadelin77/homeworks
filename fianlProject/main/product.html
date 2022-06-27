@@ -29,7 +29,26 @@
     <title>Document</title>
   </head>
   <body onload="updateBadges();populateProductPage();">
-    <!-- bara navigatie -->
+    <!-- notificari -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast text-bg-primary"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body fw-light"></div>
+          <button
+            type="button"
+            class="btn-close btn-close white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
     <!-- bara navigatie -->
     <navbar-component></navbar-component>
     <div class="container-fluid bg-light p-5">
@@ -111,24 +130,26 @@
               </p>
             </div>
             <div class="stoc d-flex align-items-center gap-2 link-success">
-              <i class="fs-2 bi bi-boxes"></i>
-              <p class="fs-5 mb-0">
+              <i class="fs-2 bi bi-boxes my-auto"></i>
+              <p class="fs-5 my-auto align-middle">
                 In stoc acum:&nbsp;<span class="stocQuantity">2</span>
               </p>
             </div>
-            <div class="btns gap-3">
-              <button
-                class="fs-4 btn btn-outline-primary addToCart"
-                type="button"
-              >
-                <i class="bi bi-cart link-primary"></i> Adauga in cos
-              </button>
-              <button
-                class="fs-4 btn btn-outline-danger addToFavorites"
-                type="button"
-              >
-                <i class="bi bi-heart link-danger"></i> Adauga la favorite
-              </button>
+            <div class="btns gap-3 container">
+              <div class="row gap-3">
+                <button
+                  class="col-12 col-md-5 fs-5 btn btn-outline-primary addToCart"
+                  type="button"
+                >
+                  <i class="bi bi-cart link-primary"></i> Adauga in cos
+                </button>
+                <button
+                  class="col-12 col-md-5 fs-5 btn btn-outline-danger addToFavorites"
+                  type="button"
+                >
+                  <i class="bi bi-heart link-danger"></i> Adauga la favorite
+                </button>
+              </div>
             </div>
           </div>
         </div>

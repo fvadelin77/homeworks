@@ -7,7 +7,9 @@ let id = window.location.search.substring(4);
 function populateSimilarProducts() {}
 
 async function populateProductPage() {
+  loader();
   await getData();
+  loader();
   // Populate Carousel
   let carousel = document.querySelector(".carousel-inner");
   let productImgArr = state.db[id].img;
@@ -16,7 +18,7 @@ async function populateProductPage() {
     if (productImgArr[i] === "") {
       continue;
     } else {
-      str += ` <div class="carousel-item${i === 0 ? " active" : ""}">
+      str += ` <div class="carousel-item${i === 0 ? " active" : ""} ">
                     <img src="${
                       productImgArr[i]
                     }" style="max-width: 500px;" class="d-block mx-auto w-100" alt="...">
