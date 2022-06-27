@@ -86,3 +86,35 @@ class Navbar extends HTMLElement {
 }
 
 customElements.define("navbar-component", Navbar);
+
+class Footer extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+    <div class="footer container-fluid d-flex m-0 p-3 fs-6 bg-dark">
+    <div class="container">
+      <div class="row align-items-center">
+        <ul class="footer-card-icons col-12 col-md-6 d-flex align-self-center justify-content-center justify-content-md-start gap-3 m-0">
+          <li><i class="fa fa-credit-card text-light" style="font-size:24px"></i></li>
+          <li><i class="fa fa fa-cc-visa text-light" style="font-size:24px"></i></li>
+          <li><i class="fa fa-cc-mastercard text-light" style="font-size:24px"></i></li>
+          <li><i class="fa fa-cc-paypal text-light" style="font-size:24px"></i></li>
+          <li><i class="fa 	fa fa-google-wallet text-light" style="font-size:24px"></i></li>
+        </ul>
+        <div class="col-12 col-md-5">
+          <div
+            class="container d-flex justify-content-center justify-content-md-end"
+          >
+            <div class="row flex-row">
+              <div class="col-6 col-md-6 text-light fs-6 fw-lighter copyright">
+                &copy; All rights reserved
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    `;
+  }
+}
+customElements.define("footer-component", Footer);

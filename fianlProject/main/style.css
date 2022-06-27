@@ -71,3 +71,10 @@ ul.navbar-nav {
   text-align: center;
   flex-grow: 1;
 } */
+
+.footer-card-icons {
+  list-style: none;
+}
+.copyright {
+  flex: 1 0 100%;
+}
