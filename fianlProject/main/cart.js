@@ -110,7 +110,7 @@ function updateCart() {
   // Check daca intre timp, pe pagina de produse, s-a adaugat un produs in plus
   if (cartLocal.length !== qInput.length) {
     populateCart();
-    /////// softbug - q change + newproduct added -> actualizeaza cos
+    /////// bug - q change + newproduct added -> actualizeaza cos
   }
   qInput = document.querySelectorAll("input[type='number']");
 
@@ -118,7 +118,6 @@ function updateCart() {
     if (qInput[i].value !== cartLocal[i].quantity) {
       if (qInput[i].value === "0") {
         cartLocal.splice(i, 1);
-        // small bug - q = 1 > delete > cosul ramane cu badge "1"
       } else {
         cartLocal[i].quantity = qInput[i].value;
       }
@@ -163,4 +162,3 @@ function checkForChanges() {
     checkoutBtn.removeAttribute("disabled");
   }
 }
-//  <td>${cart[i].product.price * cart[i].quantity} RON</td> , am scos subtotal din tabel (overflow pe mobile)
