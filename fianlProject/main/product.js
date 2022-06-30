@@ -1,10 +1,4 @@
-function drawSingleProductPage() {}
-
-// from script.js
-
 let id = window.location.search.substring(4);
-
-function populateSimilarProducts() {}
 
 async function populateProductPage() {
   loader();
@@ -50,5 +44,3 @@ async function populateProductPage() {
 
   populateSimilarProducts();
 }
-
-// html param id

@@ -38,16 +38,8 @@
   font-size: 30px;
   opacity: 0.9;
 }
-/* 
-.carousel-img {
-  height: 500px;
-  width: 1750px;
-  object-fit: cover;
-} */
 
 .carousel-item {
-  /* max-height: 500px;
-  max-width: 1200px; */
   cursor: pointer;
 }
 .carousel-inner img {
@@ -55,22 +47,10 @@
   max-height: 788px;
 }
 
-.carousel-inner {
-}
-
-nav.navbar {
-  /* max-width: 1400px; */
-}
-
 ul.navbar-nav {
   flex: 1 0 100%;
   justify-content: flex-end;
 }
-
-/* li.nav-item {
-  text-align: center;
-  flex-grow: 1;
-} */
 
 .footer-card-icons {
   list-style: none;

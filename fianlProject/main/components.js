@@ -75,10 +75,6 @@ class Navbar extends HTMLElement {
                 </a>
                 </li>
             </ul>
-            <!-- Offcanvas for favorites -->
-            <!-- Offcanvas for favorites -->
-            <!-- Offcanvas for cart -->
-            <!-- Offcanvas for cart -->
             </div>
             </div>
       </nav>`;

@@ -2,15 +2,19 @@ let state = {};
 let soldOff = [];
 
 async function getData() {
+  loader();
   let response = await fetch(
     "https://webstore-a2c89-default-rtdb.europe-west1.firebasedatabase.app/" +
       ".json"
   );
   state.db = await response.json();
+  loader();
 }
 
 async function updateCartItemsDetails() {
+  loader();
   await getData();
+  loader();
   let cart = JSON.parse(localStorage.getItem("cart"));
   for (cartObj of cart) {
     cartObj.product = state.db[cartObj.dbIdx];
@@ -19,7 +23,9 @@ async function updateCartItemsDetails() {
 }
 
 async function populateCart() {
+  loader();
   await updateCartItemsDetails();
+  loader();
   let cart = JSON.parse(localStorage.getItem("cart"));
   let tbody = document.querySelector("tbody");
   let str = "";
@@ -110,11 +116,12 @@ function updateCart() {
   // Check daca intre timp, pe pagina de produse, s-a adaugat un produs in plus
   if (cartLocal.length !== qInput.length) {
     populateCart();
-    /////// bug - q change + newproduct added -> actualizeaza cos
   }
   qInput = document.querySelectorAll("input[type='number']");
 
-  for (let i = 0; i < cartLocal.length; i++) {
+  for (let i = 0; i < qInput.length; i++) {
+    // qInput.length pentru a evita bug - qty change + add to cart new product -> actualizeaza cos
+    // for cu i < cartLocal.length merge cu o interatie in plus fata de qInput.length peste ultimul nr de elemente din qInput => undefined la ultima iteratie)
     if (qInput[i].value !== cartLocal[i].quantity) {
       if (qInput[i].value === "0") {
         cartLocal.splice(i, 1);

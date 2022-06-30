@@ -8,8 +8,6 @@
 }
 
 .product-card img {
-  /* width: 100%; */
-  /* overflow: hidden; */
   max-height: 301px;
   object-fit: contain;
 }
