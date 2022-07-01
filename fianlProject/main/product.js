@@ -41,6 +41,4 @@ async function populateProductPage() {
     "onclick",
     `addToLocal('${id}','favorites'); updateBadges();`
   );
-
-  populateSimilarProducts();
 }
