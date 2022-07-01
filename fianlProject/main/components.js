@@ -42,8 +42,12 @@ class Navbar extends HTMLElement {
                 <a href="latest.html" 
                 class="nav-link">Noutati</a>
                 </li>
+                <li class="nav-item">
+                <a href="admin.html" 
+                class="nav-link text-danger">Admin</a>
+                </li>
                 <!-- <li class="nav-item">
-                <a href="#streetwear-gallery" class="nav-link">Clereance</a>
+                <a href="#" disabled class="nav-link">Loader</a>
                 </li> -->
             </ul>
             </div>

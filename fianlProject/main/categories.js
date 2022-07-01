@@ -3,9 +3,10 @@ async function drawCategory(currentPage) {
   await getData();
   let productsGrid = document.getElementById("products-grid");
   let str = "";
-
   let len = window.location.search.substring(7);
   let targetCategory = window.location.search.substring(7, len.length * 2);
+  let title = document.querySelector("title");
+  title.innerText += capitalizeFirstLetter(targetCategory);
 
   for (let [key, value] of Object.entries(state.db)) {
     if (value.category.includes(targetCategory)) {
@@ -50,4 +51,8 @@ async function drawCategory(currentPage) {
   productsGrid.innerHTML = str;
   updateBadges();
   loader();
+}
+
+function capitalizeFirstLetter(str) {
+  return str[0].toUpperCase() + str.slice(1);
 }
